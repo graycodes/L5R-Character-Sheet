@@ -1,0 +1,140 @@
+* {
+	font-family: Georgia, serif;
+	font-size: 12px;
+	margin: 0;
+}
+
+input[type="text"] {
+	font-family: sans-serif;
+	border: 1px solid #000000;
+	border-width: 0 0 1px 0;
+}
+
+/* L+R */
+
+.left {
+	width: 600px;
+	float: left;
+}
+
+.right {
+	width: 250px;
+	float: left;
+}
+
+/* INFORMATION */
+
+#info {
+	margin-bottom: 20px;
+}
+
+#info label {
+	width: 90px;
+	display: inline-block;
+}
+#info input {
+	width: 200px;
+	margin-right: 10px;
+}
+
+/* RINGS */
+
+#rings {
+	margin-bottom: 20px;	
+}
+
+#rings .ring {
+	width: 298px;
+	display: inline-block;
+	margin-bottom: 10px;
+	line-height: 30px;
+}
+
+#rings label {
+	width: 200px;
+	display: inline-block;
+}
+
+#rings input, #rings .score {
+	border: 1px solid #000000;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 0;
+	text-align: center;
+	vertical-align: text-bottom;
+}
+
+#rings strong {
+	display: block;
+}
+
+/* LOGO */
+
+#logo {
+	margin-bottom: 10px;
+}
+
+/* SKILLS */
+
+#skills .col {
+	display: inline-block;
+}
+
+#skills input.col {
+	margin: 5px 5px 0 5px;
+}
+
+#skills .title span {
+	padding: 5px;
+	text-align: center;
+	border-bottom: 2px solid #000000;
+}
+
+#skills .skill-school {
+	width: 20px;
+}
+
+#skills .skill-name, #skills .skill-emphases {
+	width: 195px;
+}
+
+#skills .skill-rank, #skills .skill-trait, #skills .skill-roll {
+	width: 40px;
+	text-align: center;
+}
+
+/* ATTRIBUTES */
+
+#attributes {
+	border: 1px solid #000000;
+}
+
+#attributes .attribute {
+	display: block;
+	text-align: center;
+	margin: 5px;
+}
+#attributes .bar {
+	display: inline-block;
+	height: 20px;
+	background-color: #f00;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
