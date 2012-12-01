@@ -10,7 +10,14 @@ input[type="text"] {
 	border-width: 0 0 1px 0;
 }
 
-/* L+R */
+h1 {
+	width: 850px;
+	text-align: center;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+/* LEFT + RIGHT */
 
 .left {
 	width: 600px;
@@ -60,7 +67,6 @@ input[type="text"] {
 	width: 20px;
 	height: 20px;
 	display: inline-block;
-	background-color: #ffffff;
 	border-radius: 10px;
 	padding: 0;
 	text-align: center;
@@ -79,12 +85,20 @@ input[type="text"] {
 
 /* SKILLS */
 
+#skills {
+	margin-bottom: 20px;
+}
+
 #skills .col {
 	display: inline-block;
 }
 
+#skills input[type="checkbox"] {
+	vertical-align: bottom;
+}
+
 #skills input.col {
-	margin: 5px 5px 0 5px;
+	margin: 0 5px 0 5px;
 }
 
 #skills .title span {
@@ -97,19 +111,45 @@ input[type="text"] {
 	width: 20px;
 }
 
-#skills .skill-name, #skills .skill-emphases {
+#skills .skill-name, 
+#skills .skill-emphases {
 	width: 195px;
 }
 
-#skills .skill-rank, #skills .skill-trait, #skills .skill-roll {
+#skills .skill-rank, 
+#skills .skill-trait, 
+#skills .skill-roll {
 	width: 40px;
 	text-align: center;
+}
+
+/* WEAPONS */
+
+#weapons .weapon {
+	display: inline-block;
+	width: 195px;
+}
+
+#weapons .weapon .title {
+	text-align: center;
+}
+
+#weapons .weapon label {
+	font-size: 10px;
+	display: inline-block;
+	width: 65px;
+}
+
+#weapons .weapon.arrows input {
+	width: 60px;
+	margin-left:3px;
 }
 
 /* ATTRIBUTES */
 
 #attributes {
 	border: 1px solid #000000;
+	margin-bottom: 20px;
 }
 
 #attributes .attribute {
@@ -117,12 +157,88 @@ input[type="text"] {
 	text-align: center;
 	margin: 5px;
 }
+#attributes .attribute input {
+	border: 1px solid #000000;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	border-radius: 10px;
+	padding: 0;
+	text-align: center;
+}
 #attributes .bar {
 	display: inline-block;
 	height: 20px;
 	background-color: #f00;
-	
 }
+
+/* RIGHT STATS */
+
+.right-stats .title {
+	text-align: center;
+}
+
+.right-stats label {
+	font-size: 10px;
+	width: 140px;
+	display: inline-block;
+}
+.right-stats input {
+	width: 100px;
+}
+
+/* WOUND LEVELS */
+
+#wound-levels .title {
+	text-align: left;
+}
+
+#wound-levels .title span {
+	font-size: 11px;
+}
+
+#wound-levels label,
+#wound-levels .wound-level {
+	width: 80px;
+}
+
+#wound-levels .wound-level, 
+#wound-levels .value {
+	display: inline-block;
+}
+
+#wound-levels .value,
+#wound-levels input {
+	width: 50px;
+	margin-left: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
