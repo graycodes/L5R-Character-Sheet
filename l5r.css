@@ -145,19 +145,19 @@ h1 {
 	margin-left:3px;
 }
 
-/* ATTRIBUTES */
+/* status */
 
-#attributes {
+#status {
 	border: 1px solid #000000;
 	margin-bottom: 20px;
 }
 
-#attributes .attribute {
+#status .attribute {
 	display: block;
 	text-align: center;
 	margin: 5px;
 }
-#attributes .attribute input {
+#status .attribute input {
 	border: 1px solid #000000;
 	width: 20px;
 	height: 20px;
@@ -166,10 +166,27 @@ h1 {
 	padding: 0;
 	text-align: center;
 }
-#attributes .bar {
-	display: inline-block;
-	height: 20px;
-	background-color: #f00;
+#status .bar {
+	display: block;
+	margin: 0 20px 10px 20px;
+	height:5px;
+	width: 0;
+}
+
+#status .honor .bar {
+	background-color: #ffcc00;
+}
+
+#status .glory .bar {
+	background-color: #ff2900;
+}
+
+#status .status .bar {
+	background-color: #34A0DD;
+}
+
+#status .taint .bar {
+	background-color: #000000;
 }
 
 /* RIGHT STATS */
