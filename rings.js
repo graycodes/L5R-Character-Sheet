@@ -2,7 +2,8 @@
 (function() {
 
 	$(document).ready( function() {
-		$('#rings').find('input:enabled').change(setRing);
+		$('#rings').find('input:enabled')
+			.change(setRing);
 	});
 
 	var setRing = function(e) {	

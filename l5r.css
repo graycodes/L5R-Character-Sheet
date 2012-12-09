@@ -97,7 +97,8 @@ h1 {
 	vertical-align: bottom;
 }
 
-#skills input.col {
+#skills input.col,
+#skills select.col {
 	margin: 0 5px 0 5px;
 }
 
