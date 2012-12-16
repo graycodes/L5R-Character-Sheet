@@ -1,32 +1,20 @@
-* {
-	font-family: Georgia, serif;
-	font-size: 12px;
-	margin: 0;
+body {
+	background: url('images/dust.png') repeat;
 }
 
-input[type="text"] {
-	font-family: sans-serif;
-	border: 1px solid #000000;
-	border-width: 0 0 1px 0;
+.container-narrow {
+	margin: 0 auto;
+	max-width: 700px;
 }
 
 h1 {
-	width: 850px;
-	text-align: center;
-	font-size: 16px;
-	margin-bottom: 20px;
+	font-family: 'Fjalla One', sans-serif;
+	text-shadow: 1px 1px #ffffff;
 }
 
-/* LEFT + RIGHT */
-
-.left {
-	width: 600px;
-	float: left;
-}
-
-.right {
-	width: 250px;
-	float: left;
+h2 {
+	font-size: 20px;
+	text-shadow: 1px 1px #ffffff;
 }
 
 /* INFORMATION */
@@ -36,12 +24,11 @@ h1 {
 }
 
 #info label {
-	width: 90px;
+	width: 127px;
 	display: inline-block;
 }
 #info input {
 	width: 200px;
-	margin-right: 10px;
 }
 
 /* RINGS */
@@ -50,27 +37,18 @@ h1 {
 	margin-bottom: 20px;	
 }
 
-#rings .ring {
-	width: 298px;
-	display: inline-block;
-	margin-bottom: 10px;
-	line-height: 30px;
+#rings .row-fluid.top-row {
+	margin-bottom: 20px;
 }
 
 #rings label {
-	width: 200px;
+	width: 187px;
 	display: inline-block;
 }
 
 #rings input, #rings .score {
-	border: 1px solid #000000;
 	width: 20px;
-	height: 20px;
-	display: inline-block;
-	border-radius: 10px;
-	padding: 0;
 	text-align: center;
-	vertical-align: text-bottom;
 }
 
 #rings strong {
@@ -80,7 +58,7 @@ h1 {
 /* LOGO */
 
 #logo {
-	margin-bottom: 10px;
+	width: 150px;
 }
 
 /* SKILLS */
@@ -97,38 +75,40 @@ h1 {
 	vertical-align: bottom;
 }
 
-#skills input.col,
-#skills select.col {
-	margin: 0 5px 0 5px;
+#skills input[type="text"] {
+	width: auto;
 }
 
 #skills .title span {
-	padding: 5px;
 	text-align: center;
-	border-bottom: 2px solid #000000;
 }
-
-#skills .skill-school {
-	width: 20px;
-}
-
-#skills .skill-name, 
-#skills .skill-emphases {
-	width: 195px;
-}
-
-#skills .skill-rank, 
-#skills .skill-trait, 
-#skills .skill-roll {
-	width: 40px;
+#skills p {
 	text-align: center;
+}
+
+#skills input.skill-name, 
+#skills input.skill-emphases {
+	width: 148px;
+}
+
+#skills select.skill-trait {
+	width: 100px;
+} 
+#skills input.skill-roll {
+	width: 88px;
+}
+#skills input.skill-rank {
+	width: 28px;
 }
 
 /* WEAPONS */
 
+#weapons {
+	margin-bottom: 20px;
+}
+
 #weapons .weapon {
 	display: inline-block;
-	width: 195px;
 }
 
 #weapons .weapon .title {
@@ -141,15 +121,22 @@ h1 {
 	width: 65px;
 }
 
+#weapons .weapon input {
+	width: 142px;
+}
+
 #weapons .weapon.arrows input {
-	width: 60px;
-	margin-left:3px;
+	width: 57px;
+	margin: 0 1px;
+}
+#weapons .weapon.arrows label {
+	text-align: center;
+	width: 73px;
 }
 
 /* status */
 
 #status {
-	border: 1px solid #000000;
 	margin-bottom: 20px;
 }
 
