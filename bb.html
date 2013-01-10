@@ -6,7 +6,23 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.string/2.3.0/underscore.string.min.js"></script>
 	<script>
+		//this should create a 'sidebar' object to play with in the console.
+		var Sidebar = Backbone.Model.extend({
+		  promptColor: function() {
+		    var cssColor = prompt("Please enter a CSS color:");
+		    this.set({color: cssColor});
+		  }
+		});
 
+		window.sidebar = new Sidebar;
+
+		sidebar.on('change:color', function(model, color) {
+		  $('#sidebar').css({background: color});
+		});
+
+		sidebar.set({color: 'white'});
+
+		sidebar.promptColor();
 	</script>
 </head>
 
