@@ -2,34 +2,99 @@
 <html>
 <head>
 	<title>Backbone Test</title>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.9/backbone-min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script>
-		//this should create a 'sidebar' object to play with in the console.
-		window.Information = Backbone.Model.extend({
+		$(document).ready(function () {
+			window.Information = Backbone.Model.extend({
+				defaults: {
+					name: '', 
+					rank: '',
+					clan: '',
+					exp: '', 
+					school: '', 
+					insight: ''
+				}	
+			});
 
+			window.information = new Information();
+
+			window.CharSheet = Backbone.View.extend({
+				el: $('#info2'),
+
+				model: information,				
+
+				events: {
+			      "change input" : "doSomething",
+			    },
+
+			    doSomething: function(e) {
+			    	information.set({
+				        content: 'some',
+				        valid: true
+				    });
+				    $(this.el).append('testin');
+			    },
+
+			    initialize: function() {
+			    	this.render();
+			    },
+
+			    render: function () {
+			    	//$(this.el).append(' <em>erm, what?</em>');
+			    	var container = $(this.el);
+			    	/*container.append('<div class="row-fluid"></div>')
+			    		.html('<div class="span6">')
+			    		.html('<label for="">Name</label> <input type="text" value="" />');*/
+			    	var count = 0;
+			    	var parent;
+			    	for (key in this.model.defaults) {
+			    		if (count % 2 === 0) {
+			    			parent = container.append('<div class="row-fluid"></div>');
+			    		}
+			    		parent.append(key);
+			    		count++;
+			    	}
+			    	console.log(_.pairs(information.attributes));
+			    }
+			});
+
+			sheet = new CharSheet();
 		});
-
-		window.information = new Information;
-
-		/*window.CharSheet = Backbone.View.extend({
-			events: {
-		      "keypress #name" : "createOnEnter",
-		    },
-
-		    createOnEnter: function(e) {
-		    	information.create({
-			        content: this.input.getProperty("value")
-			    });
-		    }
-		});
-
-		window.sheet = new CharSheet;*/
 	</script>
 </head>
 
 <body>
-	<p>This is a test</p>
+	<div id="info">
+		<h2>Information</h2>
+		<div class="row-fluid">
+			<div class="span6">
+				<label for="">Name</label><input type="text" />
+			</div>
+			<div class="span6">
+				<label for="rank">Rank</label><input type="text" id="rank" />
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span6">
+				<label for="">Clan</label><input type="text" />
+			</div>
+			<div class="span6">
+				<label for="">Exp</label><input type="text" />
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span6">
+				<label for="">School</label><input type="text" />
+			</div>
+			<div class="span6">
+				<label for="">Insight</label><input type="text" id="insight" />
+			</div>
+		</div>
+	</div>
+	<div id="info2">
+		<h2>Information</h2>
+	</div>
 </body>
 </html>
