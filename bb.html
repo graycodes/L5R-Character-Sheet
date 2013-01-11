@@ -7,22 +7,25 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script>
 		//this should create a 'sidebar' object to play with in the console.
-		var Sidebar = Backbone.Model.extend({
-		  promptColor: function() {
-		    var cssColor = prompt("Please enter a CSS color:");
-		    this.set({color: cssColor});
-		  }
+		window.Information = Backbone.Model.extend({
+
 		});
 
-		window.sidebar = new Sidebar;
+		window.information = new Information;
 
-		sidebar.on('change:color', function(model, color) {
-		  $('#sidebar').css({background: color});
+		/*window.CharSheet = Backbone.View.extend({
+			events: {
+		      "keypress #name" : "createOnEnter",
+		    },
+
+		    createOnEnter: function(e) {
+		    	information.create({
+			        content: this.input.getProperty("value")
+			    });
+		    }
 		});
 
-		sidebar.set({color: 'white'});
-
-		sidebar.promptColor();
+		window.sheet = new CharSheet;*/
 	</script>
 </head>
 
