@@ -10,14 +10,19 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.9/backbone-min.js"></script>
 	<script>
 		$(document).ready(function () {
+
+			_.templateSettings = {
+				interpolate: /\{\{(.+?)\}\}/g
+			};
+
 			window.Information = Backbone.Model.extend({
 				defaults: {
-					Name: '',
-					Rank: '',
-					Clan: '',
-					Exp: '', 
-					School: '',
-					Insight: ''
+					name: '',
+					rank: '',
+					clan: '',
+					exp: '',
+					school: '',
+					insight: ''
 				}
 			});
 
@@ -41,19 +46,8 @@
 			    },
 
 			    render: function () {
-			    	var container = $(this.el);
-			    	var count = 0;
-			    	var parent;
-			    	for (key in this.model.defaults) {
-			    		var id = 'row' + Math.floor(count/2);
-			    		if (count % 2 === 0) {
-			    			parent = container.append('<div class="row-fluid" id="' + id + '"></div>');
-			    		}
-			    		$('#'+id).html(function(index, text) {
-			    			return text + '<div class="span6"><label for="' + key + '">' + key + '</label> <input type="text" id="' + key + '"/></div>';
-			    		});
-			    		count++;
-			    	}
+					var template = _.template(this.el.innerHTML);
+					this.el.innerHTML = template(this.model.defaults);
 			    }
 			});
 
@@ -71,8 +65,33 @@
 		</div>
 		<hr>
 		<div id="info">
-			<h2>Information</h2>		
+			<h2>Information</h2>
+			<div class="row-fluid">
+				<div class="span6">
+					<label for="info-name">Name</label><input id="info-name" type="text" value="{{name}}" />
+				</div>
+				<div class="span6">
+					<label for="info-rank">Rank</label><input id="info-rank" type="text" value="{{rank}}" />
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span6">
+					<label for="info-clan">Clan</label><input id="info-clan" type="text" value="{{clan}}" />
+				</div>
+				<div class="span6">
+					<label for="info-exp">Exp</label><input id="info-exp" type="text" value="{{exp}}" />
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span6">
+					<label for="info-school">School</label><input id="info-school" type="text" value="{{school}}" />
+				</div>
+				<div class="span6">
+					<label for="info-insight">Insight</label><input id="info-insight" type="text" value="{{insight}}" />
+				</div>
+			</div>
 		</div>
+		<hr>
 	</div>
 </div>
 </body>
