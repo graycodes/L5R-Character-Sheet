@@ -8,6 +8,7 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.9/backbone-min.js"></script>
+	<script src="saveAs.js"></script>
 	<script>
 		$(document).ready(function () {
 
@@ -15,7 +16,7 @@
 				interpolate: /\{\{(.+?)\}\}/g
 			};
 
-			window.Information = Backbone.Model.extend({
+			var Information = Backbone.Model.extend({
 				defaults: {
 					name: '',
 					rank: '',
@@ -26,15 +27,15 @@
 				}
 			});
 
-			window.information = new Information();
+			information = new Information();
 
-			window.CharSheet = Backbone.View.extend({
+			var Info = Backbone.View.extend({
 				el: $('#info'),
 
 				model: information,
 
 				events: {
-					"change input" : "setInfo",
+					"change input" 	   	 : "setInfo",
 				},
 
 			    setInfo: function(e) {
@@ -47,11 +48,37 @@
 
 			    render: function () {
 					var template = _.template(this.el.innerHTML);
-					this.el.innerHTML = template(this.model.defaults);
+					this.el.innerHTML = template(this.model.attributes);
 			    }
 			});
 
-			sheet = new CharSheet();
+			sheet = new Info();
+
+			//var characterSheet = new Backbone.Collection([information, {bob:'test'}]);
+
+			/*var characterSheet = Backbone.Collection.extend({
+
+			});*/
+
+			var IO = Backbone.View.extend({
+
+				el: "body",
+
+				model: information,
+
+				events: {
+					"click button.save": "saveData"
+				},
+
+			    saveData: function() {
+			    	console.log(this.model.toJSON());
+					var blob = new Blob([JSON.stringify(this.model.toJSON())], {type: 'text/plain;charset=utf-8'});
+					saveAs(blob, (this.model.get('name') || "character") + ".l5r");
+			    }
+
+			});
+
+			io = new IO();
 		});
 	</script>
 </head>
@@ -64,30 +91,37 @@
 			<h1>L5R Character Sheet</h1>
 		</div>
 		<hr>
+		<div class="row">
+			<div class="span12">
+				<button class="btn">Load</button>
+				<button class="btn btn-primary save">Save</button>
+			</div>
+		</div>
+		<hr>
 		<div id="info">
 			<h2>Information</h2>
 			<div class="row-fluid">
 				<div class="span6">
-					<label for="info-name">Name</label><input id="info-name" type="text" value="{{name}}" />
+					<label for="name">Name</label><input id="name" type="text" value="{{name}}" />
 				</div>
 				<div class="span6">
-					<label for="info-rank">Rank</label><input id="info-rank" type="text" value="{{rank}}" />
-				</div>
-			</div>
-			<div class="row-fluid">
-				<div class="span6">
-					<label for="info-clan">Clan</label><input id="info-clan" type="text" value="{{clan}}" />
-				</div>
-				<div class="span6">
-					<label for="info-exp">Exp</label><input id="info-exp" type="text" value="{{exp}}" />
+					<label for="rank">Rank</label><input id="rank" type="text" value="{{rank}}" />
 				</div>
 			</div>
 			<div class="row-fluid">
 				<div class="span6">
-					<label for="info-school">School</label><input id="info-school" type="text" value="{{school}}" />
+					<label for="clan">Clan</label><input id="clan" type="text" value="{{clan}}" />
 				</div>
 				<div class="span6">
-					<label for="info-insight">Insight</label><input id="info-insight" type="text" value="{{insight}}" />
+					<label for="exp">Exp</label><input id="exp" type="text" value="{{exp}}" />
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span6">
+					<label for="school">School</label><input id="school" type="text" value="{{school}}" />
+				</div>
+				<div class="span6">
+					<label for="insight">Insight</label><input id="insight" type="text" value="{{insight}}" />
 				</div>
 			</div>
 		</div>
