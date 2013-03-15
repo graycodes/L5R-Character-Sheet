@@ -54,26 +54,33 @@
 
 			sheet = new Info();
 
-			//var characterSheet = new Backbone.Collection([information, {bob:'test'}]);
+			var characterSheet = new Backbone.Collection([information, {bob:'test'}]);
 
-			/*var characterSheet = Backbone.Collection.extend({
+			var characterSheet = Backbone.Collection.extend({
 
-			});*/
+				model: {
+					info: information,
+					test: {'bob': 'test'}
+				}
+
+			});
 
 			var IO = Backbone.View.extend({
 
 				el: "body",
 
-				model: information,
+				data: {
+					info: information.toJSON(),
+					test: {'bob': 'test'}
+				},
 
 				events: {
 					"click button.save": "saveData"
 				},
 
-			    saveData: function() {
-			    	console.log(this.model.toJSON());
-					var blob = new Blob([JSON.stringify(this.model.toJSON())], {type: 'text/plain;charset=utf-8'});
-					saveAs(blob, (this.model.get('name') || "character") + ".l5r");
+			    saveData: function() {			    	
+					var blob = new Blob([JSON.stringify(this.data)], {type: 'text/plain;charset=utf-8'});
+					saveAs(blob, ("character") + ".l5r");
 			    }
 
 			});
