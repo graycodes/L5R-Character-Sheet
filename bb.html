@@ -18,16 +18,16 @@
 
 			var Information = Backbone.Model.extend({
 				defaults: {
-					name: '',
-					rank: '',
-					clan: '',
-					exp: '',
-					school: '',
+					name   : '',
+					rank   : '',
+					clan   : '',
+					exp    : '',
+					school : '',
 					insight: ''
 				}
 			});
 
-			information = new Information();
+			var information = new Information();
 
 			var Info = Backbone.View.extend({
 				el: $('#info'),
@@ -35,7 +35,7 @@
 				model: information,
 
 				events: {
-					"change input" 	   	 : "setInfo",
+					"change input" : "setInfo",
 				},
 
 			    setInfo: function(e) {
@@ -52,40 +52,42 @@
 			    }
 			});
 
-			sheet = new Info();
-
-			var characterSheet = new Backbone.Collection([information, {bob:'test'}]);
-
-			var characterSheet = Backbone.Collection.extend({
-
-				model: {
-					info: information,
-					test: {'bob': 'test'}
-				}
-
-			});
+			var info = new Info();
 
 			var IO = Backbone.View.extend({
 
 				el: "body",
 
 				data: {
-					info: information.toJSON(),
-					test: {'bob': 'test'}
+					info: information,
+					test: {'bob': 'test', toJSON: function() {return this;}}//dummy data
 				},
 
 				events: {
 					"click button.save": "saveData"
 				},
 
-			    saveData: function() {			    	
-					var blob = new Blob([JSON.stringify(this.data)], {type: 'text/plain;charset=utf-8'});
-					saveAs(blob, ("character") + ".l5r");
+				getSaveData: function(data) {					
+					for (model in data) {
+  						if (data.hasOwnProperty(model)) {
+  							data[model] = data[model].toJSON();
+  						}
+					}
+					return [JSON.stringify(data)];
+				},
+
+				getFileName: function() {
+					return ( this.data.info.name || "Character" ).replace(/\W/g, '') + ".l5r";
+				},
+
+			    saveData: function() {
+					var blob = new Blob(this.getSaveData(this.data), {type: 'text/plain;charset=utf-8'});
+					saveAs(blob, this.getFileName());
 			    }
 
 			});
 
-			io = new IO();
+			var io = new IO();
 		});
 	</script>
 </head>
