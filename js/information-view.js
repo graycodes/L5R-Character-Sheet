@@ -5,7 +5,7 @@ var app = app || {};
 
     var InformationView = Backbone.View.extend({
 
-    	id: 'info',
+    	el: $('#info'),
 
     	model: app.information,
 
@@ -22,8 +22,7 @@ var app = app || {};
         },
 
         render: function () {
-    		var template = _.template(this.$el.innerHTML);
-    		this.$el.innerHTML = template(this.model.attributes);
+            this.el.innerHTML = _.template(this.el.innerHTML)(this.model.attributes);
         }
 
     });
