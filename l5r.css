@@ -42,12 +42,12 @@ h2 {
 }
 
 #rings label {
-	width: 187px;
+	width: 177px;
 	display: inline-block;
 }
 
 #rings input, #rings .score {
-	width: 20px;
+	width: 30px;
 	text-align: center;
 }
 
