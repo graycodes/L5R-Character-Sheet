@@ -1,274 +1,295 @@
 <!doctype html>
 <html>
 <head>
-	<title>L5R CC</title>
+
+	<title>Backbone Test</title>
+
 	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="l5r.css" >
+
+	<link rel="stylesheet" href="l5r.css">
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.9/backbone-min.js"></script>
+
+	<script src="saveAs.js"></script>
+
+	<script>
+		_.templateSettings = {
+			interpolate: /\{\{(.+?)\}\}/g
+		};
+	</script>
+
 </head>
+
 <body>
-<div id="page1" class="container-narrow">
-	<div class="jumbotron">
-		<div class="masthead">
-			<img src="images/l5r-logo.png" alt="L5R Logo" id="logo" class="pull-right" />
-			<h1>L5R Character Sheet</h1>
-		</div>
-		<hr>
-		<div id="info">
-			<h2>Information</h2>
-			<div class="row-fluid">
-				<div class="span6">
-					<label for="">Name</label><input type="text" />
-				</div>
-				<div class="span6">
-					<label for="">Rank</label><input type="text" />
+	<div id="page1" class="container-narrow">
+		<div class="jumbotron">
+			<div class="masthead">
+				<img src="images/l5r-logo.png" alt="L5R Logo" id="logo" class="pull-right" />
+				<h1>L5R Character Sheet</h1>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="span12">
+					<button class="btn">Load</button>
+					<button class="btn btn-primary save">Save</button>
 				</div>
 			</div>
-			<div class="row-fluid">
-				<div class="span6">
-					<label for="">Clan</label><input type="text" />
+			<hr>
+			<div id="info">
+				<h2>Information</h2>
+				<div class="row-fluid">
+					<div class="span6">
+						<label for="name">Name</label><input id="name" type="text" value="{{name}}" />
+					</div>
+					<div class="span6">
+						<label for="rank">Rank</label><input id="rank" type="number" value="{{rank}}" />
+					</div>
 				</div>
-				<div class="span6">
-					<label for="">Exp</label><input type="text" />
+				<div class="row-fluid">
+					<div class="span6">
+						<label for="clan">Clan</label><input id="clan" type="text" value="{{clan}}" />
+					</div>
+					<div class="span6">
+						<label for="exp">Exp</label><input id="exp" type="number" value="{{exp}}" />
+					</div>
 				</div>
-			</div>
-			<div class="row-fluid">
-				<div class="span6">
-					<label for="">School</label><input type="text" />
-				</div>
-				<div class="span6">
-					<label for="">Insight</label><input type="text" id="insight" />
-				</div>
-			</div>
-		</div>
-		<hr>
-		<div id="rings">
-			<h2>Rings</h2>
-			<div class="row-fluid top-row">
-				<div class="ring earth span4">
-					<label for="" class="ring-title"><strong>Earth</strong></label><input type="text" disabled="disabled" />
-					<label for="">Stamina</label><input class="trait stamina" type="text" />
-					<label for="">Willpower</label><input class="trait willpower" type="text" />
-				</div>
-				<div class="ring air span4">
-					<label for="" class="ring-title"><strong>Air</strong></label><input type="text" disabled="disabled" />
-					<label for="">Reflexes</label><input class="trait reflexes" type="text" />
-					<label for="">Awareness</label><input class="trait awareness" type="text" />
-				</div>
-				<div class="ring water span4">
-					<label for="" class="ring-title"><strong>Water</strong></label><input type="text" disabled="disabled" />
-					<label for="">Strength</label><input class="trait strength" type="text" />
-					<label for="">Perception</label><input class="trait perception" type="text" />
+				<div class="row-fluid">
+					<div class="span6">
+						<label for="school">School</label><input id="school" type="text" value="{{school}}" />
+					</div>
+					<div class="span6">
+						<label for="insight">Insight</label><input id="insight" type="number" value="{{insight}}" />
+					</div>
 				</div>
 			</div>
-			<div class="row-fluid">
-				<div class="ring fire span4">
-					<label for="" class="ring-title"><strong>Fire</strong></label><input type="text" disabled="disabled" />
-					<label for="">Agility</label><input class="trait agility" type="text" />
-					<label for="">Intelligence</label><input class="trait intelligence" type="text" />
+			<hr>
+			<div id="rings">
+				<h2>Rings</h2>
+				<div class="row-fluid top-row">
+					<div class="ring earth span4">
+						<label for="" class="ring-title"><strong>Earth</strong></label><input type="text" disabled="disabled" />
+						<label for="">Stamina</label><input class="trait stamina" type="text" />
+						<label for="">Willpower</label><input class="trait willpower" type="text" />
+					</div>
+					<div class="ring air span4">
+						<label for="" class="ring-title"><strong>Air</strong></label><input type="text" disabled="disabled" />
+						<label for="">Reflexes</label><input class="trait reflexes" type="text" />
+						<label for="">Awareness</label><input class="trait awareness" type="text" />
+					</div>
+					<div class="ring water span4">
+						<label for="" class="ring-title"><strong>Water</strong></label><input type="text" disabled="disabled" />
+						<label for="">Strength</label><input class="trait strength" type="text" />
+						<label for="">Perception</label><input class="trait perception" type="text" />
+					</div>
 				</div>
-				<div class="ring void span4">
-					<label for="" class="ring-title"><strong>Void</strong></label><input type="text" />
-				</div>
-			</div>
-		</div>
-		<hr>
-		<div id="skills">
-			<h2>Skills</h2>
-			<div class="title row-fluid">
-				<span class="col skill-school span1">Sch</span>
-				<span class="col skill-name span3">Skill Name</span>
-				<span class="col skill-rank span1">Rank</span>
-				<span class="col skill-trait span2">Trait</span>
-				<span class="col skill-roll span2">Roll</span>
-				<span class="col skill-emphases span3">Emphases & Mastery</span>
-			</div>
-			<div class="row-fluid">
-				<p class="span1"><input type="checkbox" class="col skill-school" /></p>
-				<p class="span3"><input type="text" class="col skill-name" /></p>
-				<p class="span1"><input type="text" class="col skill-rank" /></p>
-				<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
-				<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
-				<p class="span3"><input type="text" class="col skill-emphases" /></p>
-			</div>
-			<div class="row-fluid">
-				<p class="span1"><input type="checkbox" class="col skill-school" /></p>
-				<p class="span3"><input type="text" class="col skill-name" /></p>
-				<p class="span1"><input type="text" class="col skill-rank" /></p>
-				<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
-				<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
-				<p class="span3"><input type="text" class="col skill-emphases" /></p>
-			</div>
-			<div class="row-fluid">
-				<p class="span1"><input type="checkbox" class="col skill-school" /></p>
-				<p class="span3"><input type="text" class="col skill-name" /></p>
-				<p class="span1"><input type="text" class="col skill-rank" /></p>
-				<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
-				<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
-				<p class="span3"><input type="text" class="col skill-emphases" /></p>
-			</div>
-			<div class="row-fluid">
-				<p class="span1"><input type="checkbox" class="col skill-school" /></p>
-				<p class="span3"><input type="text" class="col skill-name" /></p>
-				<p class="span1"><input type="text" class="col skill-rank" /></p>
-				<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
-				<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
-				<p class="span3"><input type="text" class="col skill-emphases" /></p>
-			</div>
-			<div class="row-fluid">
-				<p class="span1"><input type="checkbox" class="col skill-school" /></p>
-				<p class="span3"><input type="text" class="col skill-name" /></p>
-				<p class="span1"><input type="text" class="col skill-rank" /></p>
-				<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
-				<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
-				<p class="span3"><input type="text" class="col skill-emphases" /></p>
-			</div>
-			<div class="row-fluid">
-				<p class="span1"><input type="checkbox" class="col skill-school" /></p>
-				<p class="span3"><input type="text" class="col skill-name" /></p>
-				<p class="span1"><input type="text" class="col skill-rank" /></p>
-				<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
-				<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
-				<p class="span3"><input type="text" class="col skill-emphases" /></p>
-			</div>
-			<div class="row-fluid">
-				<p class="span1"><input type="checkbox" class="col skill-school" /></p>
-				<p class="span3"><input type="text" class="col skill-name" /></p>
-				<p class="span1"><input type="text" class="col skill-rank" /></p>
-				<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
-				<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
-				<p class="span3"><input type="text" class="col skill-emphases" /></p>
-			</div>
-			<div class="row-fluid">
-				<p class="span1"><input type="checkbox" class="col skill-school" /></p>
-				<p class="span3"><input type="text" class="col skill-name" /></p>
-				<p class="span1"><input type="text" class="col skill-rank" /></p>
-				<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
-				<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
-				<p class="span3"><input type="text" class="col skill-emphases" /></p>
-			</div>
-			<div class="row-fluid">
-				<p class="span1"><input type="checkbox" class="col skill-school" /></p>
-				<p class="span3"><input type="text" class="col skill-name" /></p>
-				<p class="span1"><input type="text" class="col skill-rank" /></p>
-				<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
-				<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
-				<p class="span3"><input type="text" class="col skill-emphases" /></p>
-			</div>
-			<div class="row-fluid">
-				<p class="span1"><input type="checkbox" class="col skill-school" /></p>
-				<p class="span3"><input type="text" class="col skill-name" /></p>
-				<p class="span1"><input type="text" class="col skill-rank" /></p>
-				<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
-				<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
-				<p class="span3"><input type="text" class="col skill-emphases" /></p>
-			</div>
-		</div>
-		<hr>
-		<div id="weapons">
-			<h2>Weapons</h2>
-			<div class="row-fluid">
-				<div class="weapon span4">
-					<p class="title">Weapon 1</p>
-					<p><label for="">Type</label><input type="text" /></p>
-					<p><label for="">Attack Roll</label><input type="text" /></p>
-					<p><label for="">Damage Roll</label><input type="text" /></p>
-					<p><label for="">Bonus</label><input type="text" /></p>
-					<p><label for="">Notes</label><input type="text" /></p>
-				</div>
-				<div class="weapon span4">
-					<p class="title">Weapon 2</p>
-					<p><label for="">Type</label><input type="text" /></p>
-					<p><label for="">Attack Roll</label><input type="text" /></p>
-					<p><label for="">Damage Roll</label><input type="text" /></p>
-					<p><label for="">Bonus</label><input type="text" /></p>
-					<p><label for="">Notes</label><input type="text" /></p>			
-				</div>
-				<div class="weapon arrows span4">
-					<p class="title">Arrows</p>
-					<p><label for="">Type</label><label for="">Damage</label><label for="">Quantity</label></p>
-					<p><input type="text" /><input type="text" /><input type="text" /></p>
-					<p><input type="text" /><input type="text" /><input type="text" /></p>
-					<p><input type="text" /><input type="text" /><input type="text" /></p>
-					<p><input type="text" /><input type="text" /><input type="text" /></p>
-					<p><input type="text" /><input type="text" /><input type="text" /></p>
+				<div class="row-fluid">
+					<div class="ring fire span4">
+						<label for="" class="ring-title"><strong>Fire</strong></label><input type="text" disabled="disabled" />
+						<label for="">Agility</label><input class="trait agility" type="text" />
+						<label for="">Intelligence</label><input class="trait intelligence" type="text" />
+					</div>
+					<div class="ring void span4">
+						<label for="" class="ring-title"><strong>Void</strong></label><input type="text" />
+					</div>
 				</div>
 			</div>
-		</div>
-		<hr>
-		<div id="status">
-			<h2>Status</h2>
-			<div class="fluid-row">
-				<p class="honor span12">
-					<span class="attribute">Honor <input type="text" pattern="[a-z]" /></span>
-					<span class="bar"></span>
-				</p>
+			<hr>
+			<div id="skills">
+				<h2>Skills</h2>
+				<div class="title row-fluid">
+					<span class="col skill-school span1">Sch</span>
+					<span class="col skill-name span3">Skill Name</span>
+					<span class="col skill-rank span1">Rank</span>
+					<span class="col skill-trait span2">Trait</span>
+					<span class="col skill-roll span2">Roll</span>
+					<span class="col skill-emphases span3">Emphases & Mastery</span>
+				</div>
+				<div class="row-fluid">
+					<p class="span1"><input type="checkbox" class="col skill-school" /></p>
+					<p class="span3"><input type="text" class="col skill-name" /></p>
+					<p class="span1"><input type="text" class="col skill-rank" /></p>
+					<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
+					<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
+					<p class="span3"><input type="text" class="col skill-emphases" /></p>
+				</div>
+				<div class="row-fluid">
+					<p class="span1"><input type="checkbox" class="col skill-school" /></p>
+					<p class="span3"><input type="text" class="col skill-name" /></p>
+					<p class="span1"><input type="text" class="col skill-rank" /></p>
+					<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
+					<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
+					<p class="span3"><input type="text" class="col skill-emphases" /></p>
+				</div>
+				<div class="row-fluid">
+					<p class="span1"><input type="checkbox" class="col skill-school" /></p>
+					<p class="span3"><input type="text" class="col skill-name" /></p>
+					<p class="span1"><input type="text" class="col skill-rank" /></p>
+					<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
+					<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
+					<p class="span3"><input type="text" class="col skill-emphases" /></p>
+				</div>
+				<div class="row-fluid">
+					<p class="span1"><input type="checkbox" class="col skill-school" /></p>
+					<p class="span3"><input type="text" class="col skill-name" /></p>
+					<p class="span1"><input type="text" class="col skill-rank" /></p>
+					<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
+					<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
+					<p class="span3"><input type="text" class="col skill-emphases" /></p>
+				</div>
+				<div class="row-fluid">
+					<p class="span1"><input type="checkbox" class="col skill-school" /></p>
+					<p class="span3"><input type="text" class="col skill-name" /></p>
+					<p class="span1"><input type="text" class="col skill-rank" /></p>
+					<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
+					<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
+					<p class="span3"><input type="text" class="col skill-emphases" /></p>
+				</div>
+				<div class="row-fluid">
+					<p class="span1"><input type="checkbox" class="col skill-school" /></p>
+					<p class="span3"><input type="text" class="col skill-name" /></p>
+					<p class="span1"><input type="text" class="col skill-rank" /></p>
+					<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
+					<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
+					<p class="span3"><input type="text" class="col skill-emphases" /></p>
+				</div>
+				<div class="row-fluid">
+					<p class="span1"><input type="checkbox" class="col skill-school" /></p>
+					<p class="span3"><input type="text" class="col skill-name" /></p>
+					<p class="span1"><input type="text" class="col skill-rank" /></p>
+					<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
+					<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
+					<p class="span3"><input type="text" class="col skill-emphases" /></p>
+				</div>
+				<div class="row-fluid">
+					<p class="span1"><input type="checkbox" class="col skill-school" /></p>
+					<p class="span3"><input type="text" class="col skill-name" /></p>
+					<p class="span1"><input type="text" class="col skill-rank" /></p>
+					<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
+					<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
+					<p class="span3"><input type="text" class="col skill-emphases" /></p>
+				</div>
+				<div class="row-fluid">
+					<p class="span1"><input type="checkbox" class="col skill-school" /></p>
+					<p class="span3"><input type="text" class="col skill-name" /></p>
+					<p class="span1"><input type="text" class="col skill-rank" /></p>
+					<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
+					<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
+					<p class="span3"><input type="text" class="col skill-emphases" /></p>
+				</div>
+				<div class="row-fluid">
+					<p class="span1"><input type="checkbox" class="col skill-school" /></p>
+					<p class="span3"><input type="text" class="col skill-name" /></p>
+					<p class="span1"><input type="text" class="col skill-rank" /></p>
+					<p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
+					<p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
+					<p class="span3"><input type="text" class="col skill-emphases" /></p>
+				</div>
 			</div>
-			<div class="fluid-row">
-				<p class="glory">
-					<span class="attribute">Glory <input type="text" /></span>
-					<span class="bar"> </span>
-				</p>
+			<hr>
+			<div id="weapons">
+				<h2>Weapons</h2>
+				<div class="row-fluid">
+					<div class="weapon span4">
+						<p class="title">Weapon 1</p>
+						<p><label for="">Type</label><input type="text" /></p>
+						<p><label for="">Attack Roll</label><input type="text" /></p>
+						<p><label for="">Damage Roll</label><input type="text" /></p>
+						<p><label for="">Bonus</label><input type="text" /></p>
+						<p><label for="">Notes</label><input type="text" /></p>
+					</div>
+					<div class="weapon span4">
+						<p class="title">Weapon 2</p>
+						<p><label for="">Type</label><input type="text" /></p>
+						<p><label for="">Attack Roll</label><input type="text" /></p>
+						<p><label for="">Damage Roll</label><input type="text" /></p>
+						<p><label for="">Bonus</label><input type="text" /></p>
+						<p><label for="">Notes</label><input type="text" /></p>			
+					</div>
+					<div class="weapon arrows span4">
+						<p class="title">Arrows</p>
+						<p><label for="">Type</label><label for="">Damage</label><label for="">Quantity</label></p>
+						<p><input type="text" /><input type="text" /><input type="text" /></p>
+						<p><input type="text" /><input type="text" /><input type="text" /></p>
+						<p><input type="text" /><input type="text" /><input type="text" /></p>
+						<p><input type="text" /><input type="text" /><input type="text" /></p>
+						<p><input type="text" /><input type="text" /><input type="text" /></p>
+					</div>
+				</div>
 			</div>
-			<div class="fluid-row">
-				<p class="status">
-					<span class="attribute">Status <input type="text" /></span>
-					<span class="bar"></span>
-				</p>
+			<hr>
+			<div id="status">
+				<h2>Status</h2>
+				<div class="fluid-row">
+					<p class="honor span12">
+						<span class="attribute">Honor <input type="text" pattern="[a-z]" /></span>
+						<span class="bar"></span>
+					</p>
+				</div>
+				<div class="fluid-row">
+					<p class="glory">
+						<span class="attribute">Glory <input type="text" /></span>
+						<span class="bar"> </span>
+					</p>
+				</div>
+				<div class="fluid-row">
+					<p class="status">
+						<span class="attribute">Status <input type="text" /></span>
+						<span class="bar"></span>
+					</p>
+				</div>
+				<div class="fluid-row">
+					<p class="taint">
+						<span class="attribute">Shadowlands Taint <input type="text" /></span>
+						<span class="bar"></span>
+					</p>
+				</div>
 			</div>
-			<div class="fluid-row">
-				<p class="taint">
-					<span class="attribute">Shadowlands Taint <input type="text" /></span>
-					<span class="bar"></span>
-				</p>
+			<div id="initiative" class="right-stats">
+				<p class="title">Initiative</p>
+				<p><label for="">Insight Rank / Reflexes</label><input type="text" /></p>
+				<p><label for="">Modifiers</label><input type="text" /></p>
+				<p><label for="">Current Insight</label><input type="text" /></p>
 			</div>
-		</div>
-		<div id="initiative" class="right-stats">
-			<p class="title">Initiative</p>
-			<p><label for="">Insight Rank / Reflexes</label><input type="text" /></p>
-			<p><label for="">Modifiers</label><input type="text" /></p>
-			<p><label for="">Current Insight</label><input type="text" /></p>
-		</div>
-		<div id="armor-tn" class="right-stats">
-			<p class="title">Armor TN</p>
-			<p><label for="">Type / Bonus</label><input type="text" /></p>
-			<p><label for="">Reduction</label><input type="text" /></p>
-			<p><label for="">Current TN</label><input type="text" /></p>
-		</div>
-		<div id="armor" class="right-stats">
-			<p class="title">Armor</p>
-			<p><label for="">TN Bonus</label><input type="text" /></p>
-			<p><label for="">Quality</label><input type="text" /></p>
-			<p><label for="">Notes</label><input type="text" /></p>
-		</div>
-		<div id="wounds" class="right-stats">
-			<p class="title">Wounds</p>
-			<p><label for="">Earth x2 per Level<br />Earth x5 for healthy</label><input type="text" /></p>
-		</div>
-		<div id="wound-levels" class="right-stats">
-			<p class="title"><span class="wound-level">Wound Level</span><span class="value">Penalties</span><span class="value">Total</span><span class="value">Current</span></p>
-			<p><label for="">Healthy (+0)</label><input type="text" /><input type="text" /><input type="text" /></p>
-			<p><label for="">Nicked (+3)</label><input type="text" /><input type="text" /><input type="text" /></p>
-			<p><label for="">Grazed (+5)</label><input type="text" /><input type="text" /><input type="text" /></p>
-			<p><label for="">Hurt (+10)</label><input type="text" /><input type="text" /><input type="text" /></p>
-			<p><label for="">Injured (+15)</label><input type="text" /><input type="text" /><input type="text" /></p>
-			<p><label for="">Crippled (+20)</label><input type="text" /><input type="text" /><input type="text" /></p>
-			<p><label for="">Down (+40)</label><input type="text" /><input type="text" /><input type="text" /></p>
-			<p><label for="">Out</label><input type="text" /><input type="text" /><input type="text" /></p>
-		</div>
-		<div id="wound-rate" class="right-stats">
-			<p class="title">Rate of Wound Heal</p>
-			<p><label for="">Stamina x2 + Insight Rank</label><input type="text" /></p>
-			<p><label for="">Modifiers</label><input type="text" /></p>
-			<p><label for="">Current Rate</label><input type="text" /></p>
+			<div id="armor-tn" class="right-stats">
+				<p class="title">Armor TN</p>
+				<p><label for="">Type / Bonus</label><input type="text" /></p>
+				<p><label for="">Reduction</label><input type="text" /></p>
+				<p><label for="">Current TN</label><input type="text" /></p>
+			</div>
+			<div id="armor" class="right-stats">
+				<p class="title">Armor</p>
+				<p><label for="">TN Bonus</label><input type="text" /></p>
+				<p><label for="">Quality</label><input type="text" /></p>
+				<p><label for="">Notes</label><input type="text" /></p>
+			</div>
+			<div id="wounds" class="right-stats">
+				<p class="title">Wounds</p>
+				<p><label for="">Earth x2 per Level<br />Earth x5 for healthy</label><input type="text" /></p>
+			</div>
+			<div id="wound-levels" class="right-stats">
+				<p class="title"><span class="wound-level">Wound Level</span><span class="value">Penalties</span><span class="value">Total</span><span class="value">Current</span></p>
+				<p><label for="">Healthy (+0)</label><input type="text" /><input type="text" /><input type="text" /></p>
+				<p><label for="">Nicked (+3)</label><input type="text" /><input type="text" /><input type="text" /></p>
+				<p><label for="">Grazed (+5)</label><input type="text" /><input type="text" /><input type="text" /></p>
+				<p><label for="">Hurt (+10)</label><input type="text" /><input type="text" /><input type="text" /></p>
+				<p><label for="">Injured (+15)</label><input type="text" /><input type="text" /><input type="text" /></p>
+				<p><label for="">Crippled (+20)</label><input type="text" /><input type="text" /><input type="text" /></p>
+				<p><label for="">Down (+40)</label><input type="text" /><input type="text" /><input type="text" /></p>
+				<p><label for="">Out</label><input type="text" /><input type="text" /><input type="text" /></p>
+			</div>
+			<div id="wound-rate" class="right-stats">
+				<p class="title">Rate of Wound Heal</p>
+				<p><label for="">Stamina x2 + Insight Rank</label><input type="text" /></p>
+				<p><label for="">Modifiers</label><input type="text" /></p>
+				<p><label for="">Current Rate</label><input type="text" /></p>
+			</div>
 		</div>
 	</div>
-</div>
-
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="rings.js"></script>
-<script src="status-bars.js"></script>
-<script src="skills.js"></script>
-
+	<script src="js/information.js"></script>
+	<script src="js/information-view.js"></script>
+	<script src="js/io.js"></script>
 </body>
 </html>
