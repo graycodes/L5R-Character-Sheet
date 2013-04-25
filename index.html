@@ -48,7 +48,7 @@
                     <label for="name">Name</label><input id="name" type="text" value="{{name}}" />
                 </div>
                 <div class="span6">
-                    <label for="rank">Rank</label><input id="rank" type="number" value="{{rank}}" />
+                    <label for="rank">Rank</label><input id="rank" type="number" value="{{rank}}" disabled />
                 </div>
             </div>
             <div class="row-fluid">
@@ -75,29 +75,29 @@
             <h2>Rings</h2>
             <div class="row-fluid top-row">
                 <div class="ring earth span4">
-                    <label for="" class="ring-title"><strong>Earth</strong></label><input type="number" disabled="disabled" value="{{rings.earth.rank}}" />
-                    <label for="">Stamina</label><input class="trait stamina" type="number" value="{{earth.stamina}}" />
-                    <label for="">Willpower</label><input class="trait willpower" type="number" value="{{earth.willpower}}" />
+                    <label for="earth-ring" class="ring-title"><strong>Earth</strong></label><input id="earth-ring" type="number" disabled="disabled" value="{{earth['rank']}}" />
+                    <label for="earth-stamina">Stamina</label><input class="trait stamina" id="earth-stamina" type="number" value="{{earth['stamina']}}" />
+                    <label for="earth-willpower">Willpower</label><input id="earth-willpower" class="trait willpower" type="number" value="{{earth['willpower']}}" />
                 </div>
                 <div class="ring air span4">
-                    <label for="" class="ring-title"><strong>Air</strong></label><input type="number" disabled="disabled" value="{{air.rank}}" />
-                    <label for="">Reflexes</label><input class="trait reflexes" type="number" value="{{air.reflexes}}" />
-                    <label for="">Awareness</label><input class="trait awareness" type="number" value="{{air.awareness}}" />
+                    <label for="air-ring" class="ring-title"><strong>Air</strong></label><input id="air-ring" type="number" disabled="disabled" value="{{air['rank']}}" />
+                    <label for="air-reflexes">Reflexes</label><input id="air-reflexes" class="trait reflexes" type="number" value="{{air['reflexes']}}" />
+                    <label for="air-awareness">Awareness</label><input id="air-awareness" class="trait awareness" type="number" value="{{air['awareness']}}" />
                 </div>
                 <div class="ring water span4">
-                    <label for="" class="ring-title"><strong>Water</strong></label><input type="number" disabled="disabled" value="{{water.rank}}" />
-                    <label for="">Strength</label><input class="trait strength" type="number" value="{{water.strength}}" />
-                    <label for="">Perception</label><input class="trait perception" type="number" value="{{water.perception}}" />
+                    <label for="water-ring" class="ring-title"><strong>Water</strong></label><input id="water-ring" type="number" disabled="disabled" value="{{water['rank']}}" />
+                    <label for="water-strength">Strength</label><input id="water-strength" class="trait strength" type="number" value="{{water['strength']}}" />
+                    <label for="water-perception">Perception</label><input id="water-perception" class="trait perception" type="number" value="{{water['perception']}}" />
                 </div>
             </div>
             <div class="row-fluid">
                 <div class="ring fire span4">
-                    <label for="" class="ring-title"><strong>Fire</strong></label><input type="number" disabled="disabled" value="{{fire.rank}}" />
-                    <label for="">Agility</label><input class="trait agility" type="number" value="{{fire.agility}}" />
-                    <label for="">Intelligence</label><input class="trait intelligence" type="number" value="{{fire.intelligence}}" />
+                    <label for="fire-ring" class="ring-title"><strong>Fire</strong></label><input id="fire-ring" type="number" disabled="disabled" value="{{fire['rank']}}" />
+                    <label for="fire-agility">Agility</label><input id="fire-agility" class="trait agility" type="number" value="{{fire['agility']}}" />
+                    <label for="fire-intelligence">Intelligence</label><input id="fire-intelligence" class="trait intelligence" type="number" value="{{fire['intelligence']}}" />
                 </div>
                 <div class="ring void span4">
-                    <label for="" class="ring-title"><strong>Void</strong></label><input type="number" value="{{void.rank}}" />
+                    <label for="void" class="ring-title"><strong>Void</strong></label><input id="void" type="number" value="{{avoid['rank']}}" />
                 </div>
             </div>
         </div>

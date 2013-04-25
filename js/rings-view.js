@@ -1,3 +1,4 @@
+/*global _:false, Backbone:false, $:false */
 var app = app || {};
 
 (function() {
@@ -10,7 +11,7 @@ var app = app || {};
         model: app.rings,
 
         events: {
-            "change input" : "setRings",
+            "change input" : "setRings"
         },
 
         setRings: function(e) {
@@ -22,10 +23,12 @@ var app = app || {};
         initialize: function() {
             console.log('rawr');
             this.render();
+            console.log('pickles');
         },
 
         render: function () {
-            this.el.innerHTML = _.template(this.el.innerHTML)(this.model.attributes);
+            var template = _.template(this.el.innerHTML);
+            this.el.innerHTML = template(this.model.attributes);
         }
 
     });

@@ -1,3 +1,4 @@
+/*global Backbone:false */
 var app = app || {};
 
 (function() {
@@ -25,7 +26,7 @@ var app = app || {};
 				agility: 0,
 				intelligence: 0
 			},
-			'void': {
+			avoid: {
 				rank: 0
 			}
 		}
@@ -34,3 +35,61 @@ var app = app || {};
 	app.rings = new Rings();
 
 }());
+
+/*
+(function() {
+    "use strict";
+
+    var Attribute = Backbone.Model.extend({
+        defaults: {
+            name: "",
+            rank: ""
+        }
+    });
+
+    var Ring = Backbone.Model.extend({
+        defaults: {
+            name: "",
+            attributes: []
+        }
+    });
+
+    var Rings = Backbone.Collection.extend({
+        model: Ring
+    });
+
+    var earth = new Ring({
+        name: "Earth", attributes: [
+            new Attribute({name: "Stamina", rank: 0}),
+            new Attribute({name: "Willpower", rank: 0})
+        ]
+    });
+
+    var air = new Ring({
+            name: "Air", attributes: [
+                new Attribute({name: "Reflexes", rank: 0}),
+                new Attribute({name: "Perception", rank: 0})
+            ]
+        });
+
+    var fire = new Ring({
+        name: "Fire", attributes: [
+            new Attribute({name: "Intelligence", rank: 0}),
+            new Attribute({name: "Agility", rank: 0})
+        ]
+    });
+
+    var water = new Ring({
+        name: "Water", attributes: [
+            new Attribute({name: "Strength", rank: 0}),
+            new Attribute({name: "Awareness", rank: 0})
+        ]
+    });
+
+    var voids = new Rings({
+        name: "Void", attributes: []
+    });
+
+    app.rings = new Rings([earth, air, fire, water, voids]);
+
+}());*/

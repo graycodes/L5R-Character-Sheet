@@ -6,7 +6,7 @@ var app = app || {};
 	var Information = Backbone.Model.extend({
 		defaults: {
 			name   : '',
-			rank   : '',
+			rank   : 0,
 			clan   : '',
 			exp    : '',
 			school : '',
