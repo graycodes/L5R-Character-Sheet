@@ -10,7 +10,7 @@ var app = app || {};
     	model: app.information,
 
     	events: {
-    		"change input" : "setInfo",
+    		"change input" : "setInfo"
     	},
 
         setInfo: function(e) {
