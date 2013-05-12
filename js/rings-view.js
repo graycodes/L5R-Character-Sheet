@@ -6,7 +6,7 @@ var app = app || {};
 
     var RingsView = Backbone.View.extend({
 
-        el: $('#rings'),
+        id: 'rings',
 
         model: app.rings,
 
@@ -14,8 +14,10 @@ var app = app || {};
             "change input" : "setRings"
         },
 
+        template: _.template($('#rings-template').html()),
+
         setRings: function(e) {
-            var ring = this.getRing(e.target.id);
+            var ring      = this.getRing(e.target.id);
             var attribute = this.getAttribute(e.target.id);
 
             this.model.attributes[ring][attribute] = e.target.value;
@@ -46,11 +48,12 @@ var app = app || {};
         },
 
         initialize: function() {
+            $('#rings-template').after(this.el);
             this.render();
         },
 
         render: function () {
-            $(this.el).append(_.template(this.el.innerHTML)(this.model.attributes));
+            this.$el.html(this.template(this.model.attributes));
         }
 
     });
