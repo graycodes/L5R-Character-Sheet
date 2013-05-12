@@ -1,38 +1,43 @@
+/*global Backbone:false */
+var app = app || {};
+
 (function() {
+    "use strict";
 
-	var IO = Backbone.View.extend({
+    var IO = Backbone.View.extend({
 
-		el: "body",
+        el: "body",
 
-		data: {
-			info: app.information,
-			test: {'bob': 'test', toJSON: function() {return this;}}//dummy data
-		},
+        data: {
+            info: app.information,
+            rings: app.rings,
+            test: {'bob': 'test', toJSON: function() {return this;}}//dummy data
+        },
 
-		events: {
-			"click button.save": "saveData"
-		},
+        events: {
+            "click button.save": "saveData"
+        },
 
-		getSaveData: function(data) {					
-			for (model in data) {
-					if (data.hasOwnProperty(model)) {
-						data[model] = data[model].toJSON();
-					}
-			}
-			return [JSON.stringify(data)];
-		},
+        getSaveData: function(data) {
+            for (var model in data) {
+                if (data.hasOwnProperty(model)) {
+                    data[model] = data[model].toJSON();
+                }
+            }
+            return [JSON.stringify(data)];
+        },
 
-		getFileName: function() {
-			return ( this.data.info.name || "Character" ).replace(/\W/g, '') + ".l5r";
-		},
+        getFileName: function() {
+            return ( this.data.info.name || "Character" ).replace(/\W/g, '') + ".l5r";
+        },
 
-	    saveData: function() {
-			var blob = new Blob(this.getSaveData(this.data), {type: 'text/plain;charset=utf-8'});
-			saveAs(blob, this.getFileName());
-	    }
+        saveData: function() {
+            var blob = new Blob(this.getSaveData(this.data), {type: 'text/plain;charset=utf-8'});
+            saveAs(blob, this.getFileName());
+        }
 
-	});
+    });
 
-	app.io = new IO();
+    app.io = new IO();
 
 }());
