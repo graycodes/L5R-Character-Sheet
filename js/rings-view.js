@@ -22,7 +22,7 @@ var app = app || {};
 
             this.model.attributes[ring][attribute] = e.target.value;
 
-            this.model.attributes[ring].rank = this.getHighestAttribute(ring);
+            this.model.attributes[ring].rank = this.getLowestAttribute(ring);
 
             this.render();
         },
@@ -35,9 +35,9 @@ var app = app || {};
             return id.substr((id.indexOf('-') === -1 ? 0 : id.indexOf('-') + 1), id.length);
         },
 
-        getHighestAttribute: function(ring) {
+        getLowestAttribute: function(ring) {
             var attributes = _.omit(this.model.attributes[ring], 'rank');
-            return _.max(attributes, function(attr) {return attr;});
+            return _.min(attributes, function(attr) {return attr;});
         },
 
         initialize: function() {
