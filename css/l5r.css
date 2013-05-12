@@ -1,0 +1,261 @@
+body {
+    background: url('../images/dust.png') repeat;
+}
+
+.container-narrow {
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+h1 {
+    font-family: 'Fjalla One', sans-serif;
+    text-shadow: 1px 1px #ffffff;
+}
+
+h2 {
+    font-size: 20px;
+    text-shadow: 1px 1px #ffffff;
+}
+
+/* INFORMATION */
+
+#info {
+    margin-bottom: 20px;
+}
+
+#info label {
+    width: 127px;
+    display: inline-block;
+}
+#info input {
+    width: 200px;
+}
+
+/* RINGS */
+
+#rings {
+    margin-bottom: 20px;
+}
+
+#rings .row-fluid.top-row {
+    margin-bottom: 20px;
+}
+
+#rings label {
+    width: 177px;
+    display: inline-block;
+}
+
+#rings input, #rings .score {
+    width: 30px;
+    text-align: center;
+}
+
+#rings strong {
+    display: block;
+}
+
+/* LOGO */
+
+#logo {
+    width: 150px;
+}
+
+/* SKILLS */
+
+#skills {
+    margin-bottom: 20px;
+}
+
+#skills .col {
+    display: inline-block;
+}
+
+#skills input[type="checkbox"] {
+    vertical-align: bottom;
+}
+
+#skills input[type="text"] {
+    width: auto;
+}
+
+#skills .title span {
+    text-align: center;
+}
+#skills p {
+    text-align: center;
+}
+
+#skills input.skill-name, 
+#skills input.skill-emphases {
+    width: 148px;
+}
+
+#skills select.skill-trait {
+    width: 100px;
+} 
+#skills input.skill-roll {
+    width: 88px;
+}
+#skills input.skill-rank {
+    width: 28px;
+}
+
+/* WEAPONS */
+
+#weapons {
+    margin-bottom: 20px;
+}
+
+#weapons .weapon {
+    display: inline-block;
+}
+
+#weapons .weapon .title {
+    text-align: center;
+}
+
+#weapons .weapon label {
+    font-size: 10px;
+    display: inline-block;
+    width: 65px;
+}
+
+#weapons .weapon input {
+    width: 142px;
+}
+
+#weapons .weapon.arrows input {
+    width: 57px;
+    margin: 0 1px;
+}
+#weapons .weapon.arrows label {
+    text-align: center;
+    width: 73px;
+}
+
+/* status */
+
+#status {
+    margin-bottom: 20px;
+}
+
+#status .attribute {
+    display: block;
+    text-align: center;
+    margin: 5px;
+}
+#status .attribute input {
+    border: 1px solid #000000;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 0;
+    text-align: center;
+}
+#status .bar {
+    display: block;
+    margin: 0 20px 10px 20px;
+    height:5px;
+    width: 0;
+}
+
+#status .honor .bar {
+    background-color: #ffcc00;
+}
+
+#status .glory .bar {
+    background-color: #ff2900;
+}
+
+#status .status .bar {
+    background-color: #34A0DD;
+}
+
+#status .taint .bar {
+    background-color: #000000;
+}
+
+/* RIGHT STATS */
+
+.right-stats .title {
+    text-align: center;
+}
+
+.right-stats label {
+    font-size: 10px;
+    width: 140px;
+    display: inline-block;
+}
+.right-stats input {
+    width: 100px;
+}
+
+/* WOUND LEVELS */
+
+#wound-levels .title {
+    text-align: left;
+}
+
+#wound-levels .title span {
+    font-size: 11px;
+}
+
+#wound-levels label,
+#wound-levels .wound-level {
+    width: 80px;
+}
+
+#wound-levels .wound-level, 
+#wound-levels .value {
+    display: inline-block;
+}
+
+#wound-levels .value,
+#wound-levels input {
+    width: 50px;
+    margin-left: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
