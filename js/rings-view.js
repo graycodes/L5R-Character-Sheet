@@ -36,15 +36,8 @@ var app = app || {};
         },
 
         getHighestAttribute: function(ring) {
-            var highest = 0;
-            for(var attribute in this.model.attributes[ring]) {
-                if (this.model.attributes[ring].hasOwnProperty(attribute) && attribute !== 'rank') {
-                    if (this.model.attributes[ring][attribute] > highest) {
-                        highest = this.model.attributes[ring][attribute];
-                    }
-                }
-            }
-            return highest;
+            var attributes = _.omit(this.model.attributes[ring], 'rank');
+            return _.max(attributes, function(attr) {return attr;});
         },
 
         initialize: function() {
