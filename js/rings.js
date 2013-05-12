@@ -7,27 +7,27 @@ var app = app || {};
     var Rings = Backbone.Model.extend({
         defaults: {
             earth: {
-                rank: 0,
-                stamina: 0,
-                willpower: 0
+                rank: 1,
+                stamina: 1,
+                willpower: 1
             },
             air: {
-                rank: 0,
-                reflexes: 0,
-                awareness: 0
+                rank: 1,
+                reflexes: 1,
+                awareness: 1
             },
             water: {
-                rank: 0,
-                strength: 0,
-                perception: 0
+                rank: 1,
+                strength: 1,
+                perception: 1
             },
             fire: {
-                rank: 0,
-                agility: 0,
-                intelligence: 0
+                rank: 1,
+                agility: 1,
+                intelligence: 1
             },
             avoid: {
-                rank: 0
+                rank: 1
             }
         }
     });
