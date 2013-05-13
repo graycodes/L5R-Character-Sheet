@@ -71,7 +71,7 @@
 
         <hr>
 
-        <div id="rings-template" style="display: none;">
+        <script type="text/template" id="rings-template" style="display: none;">
             <h2>Rings</h2>
             <div class="row-fluid top-row">
                 <div class="ring earth span4">
@@ -100,11 +100,11 @@
                     <label for="void" class="ring-title"><strong>Void</strong></label><input id="void" type="number" min="1" max="9" step="1" value="{{avoid['rank']}}" />
                 </div>
             </div>
-        </div>
+        </script>
 
         <hr>
 
-        <div id="skills">
+        <script type="text/template" id="skills-template">
             <h2>Skills</h2>
             <div class="title row-fluid">
                 <span class="col skill-school span1">Sch</span>
@@ -112,18 +112,33 @@
                 <span class="col skill-rank span1">Rank</span>
                 <span class="col skill-trait span2">Trait</span>
                 <span class="col skill-roll span2">Roll</span>
-                <span class="col skill-emphases span3">Emphases &amp; Mastery</span>
+                <span class="col skill-emphases span2">Emphases &amp; Mastery</span>
+                <span class="col skill-thing span1">Add</span>
             </div>
             <div class="row-fluid">
-                <p class="span1"><input type="checkbox" class="col skill-school" /></p>
-                <p class="span3"><input type="text" class="col skill-name" /></p>
-                <p class="span1"><input type="text" class="col skill-rank" /></p>
-                <p class="span2"><select class="col skill-trait"><option>Agility</option><option>Awareness</option><option>Intelligence</option><option>Perception</option><option>Reflexes</option><option>Stamina</option><option>Strength</option><option>Willpower</option></select></p>
-                <p class="span2"><input type="text" class="col skill-roll" disabled="disabled" /></p>
-                <p class="span3"><input type="text" class="col skill-emphases" /></p>
+                <p class="span1"><input type="checkbox" class="col skill-school" {{ school ? 'checked' : '' }} /></p>
+                <p class="span3"><input type="text" class="col skill-name" value="{{name}}"/></p>
+                <p class="span1"><input type="text" class="col skill-rank" value="{{rank}}"/></p>
+                <p class="span2">
+                    <select class="col skill-trait"><!-- WHAT DO HERE? -->
+                        <option>Agility</option>
+                        <option>Awareness</option>
+                        <option>Intelligence</option>
+                        <option>Perception</option>
+                        <option>Reflexes</option>
+                        <option>Stamina</option>
+                        <option>Strength</option>
+                        <option>Willpower</option>
+                    </select>
+                </p>
+                <p class="span2"><input type="text" class="col skill-roll" disabled="disabled" value="{{roll}}" /></p>
+                <p class="span2"><input type="text" class="col skill-emphases" value="{{emphases}}"/></p>
+                <p class="span1"><button class="btn btn-info">Add</button></p>
             </div>
-        </div>
+        </script>
+
         <hr>
+<!--
         <div id="weapons">
             <h2>Weapons</h2>
             <div class="row-fluid">
@@ -220,7 +235,7 @@
             <p><label for="">Stamina x2 + Insight Rank</label><input type="text" /></p>
             <p><label for="">Modifiers</label><input type="text" /></p>
             <p><label for="">Current Rate</label><input type="text" /></p>
-        </div>
+        </div>-->
     </div>
 </div>
 <script src="js/information.js"></script>
@@ -228,6 +243,9 @@
 
 <script src="js/rings.js"></script>
 <script src="js/rings-view.js"></script>
+
+<script src="js/skills.js"></script>
+<script src="js/skills-view.js"></script>
 
 <script src="js/io.js"></script>
 </body>

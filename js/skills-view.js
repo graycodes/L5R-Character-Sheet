@@ -4,19 +4,19 @@ var app = app || {};
 (function() {
     "use strict";
 
-    var RingsView = Backbone.View.extend({
+    var SkillsView = Backbone.View.extend({
 
-        id: 'rings',
+        id: 'skills',
 
-        model: app.rings,
+        model: app.skills,
 
         events: {
-            "change input" : "setRings"
+            "change input" : "setSkills"
         },
 
-        template: _.template($('#rings-template').html()),
+        template: _.template($('#skills-template').html()),
 
-        setRings: function(e) {
+        setSkills: function(e) {/*
             var ring      = this.getRing(e.target.id);
             var attribute = this.getAttribute(e.target.id);
 
@@ -24,7 +24,7 @@ var app = app || {};
 
             this.model.attributes[ring].rank = this.getLowestAttribute(ring);
 
-            this.render();
+            this.render();*/
         },
 
         getRing: function(id) {
@@ -35,16 +35,13 @@ var app = app || {};
             return id.substr((id.indexOf('-') === -1 ? 0 : id.indexOf('-') + 1), id.length);
         },
 
-        getAttributes: function(ring) {
-            return _.omit(this.model.attributes[ring], 'rank');
-        },
-
         getLowestAttribute: function(ring) {
-            return _.min(this.getAttributes(ring), function(attr) {return attr;});
+            var attributes = _.omit(this.model.attributes[ring], 'rank');
+            return _.min(attributes, function(attr) {return attr;});
         },
 
         initialize: function() {
-            $('#rings-template').after(this.el);
+            $('#skills-template').after(this.el);
             this.render();
         },
 
@@ -54,6 +51,6 @@ var app = app || {};
 
     });
 
-    app.ringsView = new RingsView();
+    app.skillsView = new SkillsView();
 
 }());

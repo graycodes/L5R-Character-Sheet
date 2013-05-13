@@ -86,9 +86,11 @@ h2 {
     text-align: center;
 }
 
-#skills input.skill-name, 
-#skills input.skill-emphases {
+#skills input.skill-name {
     width: 148px;
+}
+#skills input.skill-emphases {
+    width: 100px;
 }
 
 #skills select.skill-trait {
