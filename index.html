@@ -120,23 +120,23 @@
 
             <script type="text/template" id="skill-template">
                 <div class="row-fluid skill-row">
-                    <p class="span1"><input type="checkbox" class="col skill-school" {{ school ? 'checked' : '' }} /></p>
-                    <p class="span3"><input type="text" class="col skill-name" value="{{name}}"/></p>
-                    <p class="span1"><input type="text" class="col skill-rank" value="{{rank}}"/></p>
+                    <p class="span1"><input type="checkbox" class="col skill-school" data-name="school" {{ school ? 'checked' : '' }} /></p>
+                    <p class="span3"><input type="text" class="col skill-name" data-name="name" value="{{name}}"/></p>
+                    <p class="span1"><input type="text" class="col skill-rank" data-name="rank" value="{{rank}}"/></p>
                     <p class="span2">
-                        <select class="col skill-trait"><!-- WHAT DO HERE? -->
-                            <option>Agility</option>
-                            <option>Awareness</option>
-                            <option>Intelligence</option>
-                            <option>Perception</option>
-                            <option>Reflexes</option>
-                            <option>Stamina</option>
-                            <option>Strength</option>
-                            <option>Willpower</option>
+                        <select class="col skill-trait" data-name="trait"><!-- WHAT DO HERE? -->
+                            <option {{ trait === 'Agility'      ? 'selected' : '' }} >Agility</option>
+                            <option {{ trait === 'Awareness'    ? 'selected' : '' }} >Awareness</option>
+                            <option {{ trait === 'Intelligence' ? 'selected' : '' }} >Intelligence</option>
+                            <option {{ trait === 'Perception'   ? 'selected' : '' }} >Perception</option>
+                            <option {{ trait === 'Reflexes'     ? 'selected' : '' }} >Reflexes</option>
+                            <option {{ trait === 'Stamina'      ? 'selected' : '' }} >Stamina</option>
+                            <option {{ trait === 'Strength'     ? 'selected' : '' }} >Strength</option>
+                            <option {{ trait === 'Willpower'    ? 'selected' : '' }} >Willpower</option>
                         </select>
                     </p>
-                    <p class="span2"><input type="text" class="col skill-roll" disabled="disabled" value="{{roll}}" /></p>
-                    <p class="span2"><input type="text" class="col skill-emphases" value="{{emphases}}"/></p>
+                    <p class="span2"><input type="text" class="col skill-roll" disabled="disabled" data-name="roll" value="{{roll}}" /></p>
+                    <p class="span2"><input type="text" class="col skill-emphases" data-name="emphases" value="{{emphases}}"/></p>
                     <p class="span1"><button class="btn btn-danger del">Del</button></p>
                 </div>
             </script>

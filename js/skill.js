@@ -6,12 +6,16 @@ var app = app || {};
 
     app.Skill = Backbone.Model.extend({
         defaults: {
-            school: 0,
+            school: false,
             name: "",
             rank: "",
             trait: "",
             roll: "",
             emphases: ""
+        },
+
+        toggle: function() {
+            this.save({school: !this.get('school')});
         }
     });
 

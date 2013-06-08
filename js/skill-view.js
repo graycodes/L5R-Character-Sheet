@@ -9,16 +9,19 @@ var app = app || {};
         tagName: 'div',
 
         events: {
-            'click button.del': 'removeSkill'
+            'click button.del'             : 'removeSkill',
+            "change input[type='text']"    : "updateSkill",
+            "change select"                : "updateSkill",
+            "click input[type='checkbox']" : "toggleSchoolSkill"
         },
 
         template: _.template($('#skill-template').html()),
 
         initialize: function() {
-            _.bindAll(this, 'render', 'removeSkill', 'unrender'); // every function that uses 'this' as the current object should be in here
+            _.bindAll(this, 'render', 'removeSkill', 'unRender', 'updateSkill'); // every function that uses 'this' as the current object should be in here
 
             this.model.bind('change', this.render);
-            this.model.bind('remove', this.unrender);
+            this.model.bind('remove', this.unRender);
         },
 
         render: function () {
@@ -26,14 +29,25 @@ var app = app || {};
             return this;
         },
 
-        unrender: function () {
+        unRender: function () {
             $(this.el).remove();
-            return this;
         },
 
         removeSkill: function() {
-            console.log('test');
             this.model.destroy();
+        },
+
+        updateRoll: function() {
+            this.model.set('roll', 1 );//needs access to the rings, and to get the dropdown working first.
+        },
+
+        updateSkill: function(e) {
+            //this.updateRoll();
+            this.model.set(e.target.dataset.name, e.target.value);
+        },
+
+        toggleSchoolSkill: function() {
+            this.model.toggle();
         }
 
     });

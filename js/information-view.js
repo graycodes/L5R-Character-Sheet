@@ -1,3 +1,4 @@
+/*global $:false, Backbone:false, _:false */
 var app = app || {};
 
 (function() {
@@ -5,20 +6,20 @@ var app = app || {};
 
     var InformationView = Backbone.View.extend({
 
-    	el: $('#info'),
+        el: $('#info'),
 
-    	model: app.information,
+        model: app.information,
 
-    	events: {
-    		"change input" : "setInfo"
-    	},
+        events: {
+            "change input" : "setInfo"
+        },
 
         setInfo: function(e) {
-        	this.model.set(e.target.id, e.target.value);
+            this.model.set(e.target.id, e.target.value);
         },
 
         initialize: function() {
-        	this.render();
+            this.render();
         },
 
         render: function () {

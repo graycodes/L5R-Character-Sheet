@@ -1,4 +1,4 @@
-/*global Backbone:false */
+/*global Backbone:false, saveAs:false */
 var app = app || {};
 
 (function() {
@@ -11,7 +11,8 @@ var app = app || {};
         data: {
             info: app.information,
             rings: app.rings,
-            test: {'bob': 'test', toJSON: function() {return this;}}//dummy data
+            skills: app.skillsView.collection
+
         },
 
         events: {
