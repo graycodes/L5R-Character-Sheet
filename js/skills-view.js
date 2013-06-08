@@ -6,47 +6,38 @@ var app = app || {};
 
     var SkillsView = Backbone.View.extend({
 
-        id: 'skills',
-
-        model: app.skills,
+        el: $('#skills'),
 
         events: {
-            "change input" : "setSkills"
-        },
-
-        template: _.template($('#skills-template').html()),
-
-        setSkills: function(e) {/*
-            var ring      = this.getRing(e.target.id);
-            var attribute = this.getAttribute(e.target.id);
-
-            this.model.attributes[ring][attribute] = e.target.value;
-
-            this.model.attributes[ring].rank = this.getLowestAttribute(ring);
-
-            this.render();*/
-        },
-
-        getRing: function(id) {
-            return id.substr(0, (id.indexOf('-') === -1 ? id.length : id.indexOf('-')));
-        },
-
-        getAttribute: function(id) {
-            return id.substr((id.indexOf('-') === -1 ? 0 : id.indexOf('-') + 1), id.length);
-        },
-
-        getLowestAttribute: function(ring) {
-            var attributes = _.omit(this.model.attributes[ring], 'rank');
-            return _.min(attributes, function(attr) {return attr;});
+            'click button.add': 'addSkill'
         },
 
         initialize: function() {
-            $('#skills-template').after(this.el);
+            _.bindAll(this, 'render', 'addSkill', 'appendSkill');
+
+            this.collection = new app.Skills();
+            this.collection.bind('add', this.appendSkill); // collection event binder
+
             this.render();
         },
 
+        addSkill: function() {
+            var skill = new app.Skill();
+            this.collection.add(skill);
+        },
+
+        appendSkill: function(skill) {
+            var skillView = new app.SkillView({
+                model: skill
+            });
+            $(this.el).append(skillView.render().el);
+        },
+
         render: function () {
-            this.$el.html(this.template(this.model.attributes));
+            var that = this;
+            _(this.collection.models).each(function(skill){ // in case collection is not empty
+                that.appendSkill(skill);
+            }, this);
         }
 
     });

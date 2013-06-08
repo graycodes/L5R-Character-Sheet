@@ -4,17 +4,8 @@ var app = app || {};
 (function() {
     "use strict";
 
-    var Skills = Backbone.Model.extend({
-        defaults: {
-            school: 0,
-            name: "",
-            rank: "",
-            trait: "",
-            roll: "",
-            emphases: ""
-        }
+    app.Skills = Backbone.Collection.extend({
+        model: app.Skill
     });
-
-    app.skills = new Skills();
 
 }());
