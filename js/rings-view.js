@@ -17,18 +17,27 @@ var app = app || {};
         template: _.template($('#rings-template').html()),
 
         setRings: function(e) {
-            var ring      = this.getRing(e.target.id);
-            var attribute = this.getAttribute(e.target.id);
+            var ring       = this.getRing(e.target.id),
+                attribute  = this.getAttribute(e.target.id),
+                lowestAttr;
 
             this.model.attributes[ring][attribute] = e.target.value;
 
-            this.model.attributes[ring].rank = this.getLowestAttribute(ring);
+            lowestAttr = this.getLowestAttribute(ring);
+
+            this.model.attributes[ring].rank = lowestAttr;
+
+            app.eventBus.trigger('setRings', this.model.attributes);
 
             this.render();
         },
 
         getRing: function(id) {
             return id.substr(0, (id.indexOf('-') === -1 ? id.length : id.indexOf('-')));
+        },
+
+        getRingRanks: function() {
+            return _.pluck(this.model.attributes, 'rank');
         },
 
         getAttribute: function(id) {
@@ -40,7 +49,7 @@ var app = app || {};
         },
 
         getLowestAttribute: function(ring) {
-            return _.min(this.getAttributes(ring), function(attr) {return attr;});
+            return +_.min(this.getAttributes(ring), function(attr) {return attr;});
         },
 
         initialize: function() {

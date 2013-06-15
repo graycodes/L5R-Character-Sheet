@@ -124,7 +124,7 @@
                     <p class="span3"><input type="text" class="col skill-name" data-name="name" value="{{name}}"/></p>
                     <p class="span1"><input type="text" class="col skill-rank" data-name="rank" value="{{rank}}"/></p>
                     <p class="span2">
-                        <select class="col skill-trait" data-name="trait"><!-- WHAT DO HERE? -->
+                        <select class="col skill-trait" data-name="trait">
                             <option {{ trait === 'Agility'      ? 'selected' : '' }} >Agility</option>
                             <option {{ trait === 'Awareness'    ? 'selected' : '' }} >Awareness</option>
                             <option {{ trait === 'Intelligence' ? 'selected' : '' }} >Intelligence</option>
@@ -244,6 +244,8 @@
     </div>
 </div>
 
+<script src="build/js/l5r-character-sheet.min.js"></script>
+<!--
 <script src="js/information.js"></script>
 <script src="js/information-view.js"></script>
 
@@ -256,7 +258,8 @@
 <script src="js/skills-view.js"></script>
 
 <script src="js/io.js"></script>
-
+<script src="js/event-bus.js"></script>
+-->
 <!--<script src="js/app.js"></script>-->
 </body>
 </html>
