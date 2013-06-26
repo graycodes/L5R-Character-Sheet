@@ -17,7 +17,7 @@ require.config({
     }
 });
 
-require(["jquery", "underscore", "bootstrap", "backbone", "skillsView"], function ($, _) {
+require(["jquery", "underscore", "bootstrap", "backbone"], function ($, _) {
     "use strict";
 
     _.templateSettings = {
@@ -28,4 +28,5 @@ require(["jquery", "underscore", "bootstrap", "backbone", "skillsView"], functio
         return this.charAt(0).toUpperCase() + this.slice(1);
     };
 
+    require(["informationView", "ringsView", "skillsView"]);
 });

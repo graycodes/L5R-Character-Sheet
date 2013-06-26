@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false, _:false, $:false */
 var app = app || {};
 
-define("skillView", ["backbone", "main", "skill"], function() {
+define("skillView", ["backbone", "skill"], function() {
     "use strict";
 
     app.SkillView = Backbone.View.extend({

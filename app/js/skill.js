@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false */
 var app = app || {};
 
-define("skill", ["backbone", "main"], function() {
+define("skill", ["backbone"], function() {
     "use strict";
 
     app.Skill = Backbone.Model.extend({

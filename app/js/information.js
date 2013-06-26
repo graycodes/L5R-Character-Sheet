@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false */
 var app = app || {};
 
-define("information", ["backbone", "main"], function() {
+define("information", ["backbone"], function() {
     "use strict";
 
     var Information = Backbone.Model.extend({

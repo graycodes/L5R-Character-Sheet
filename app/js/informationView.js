@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false, _:false, $:false */
 var app = app || {};
 
-define("informationView", ["backbone", "main", "information"], function() {
+define("informationView", ["backbone", "information"], function() {
     "use strict";
 
     var InformationView = Backbone.View.extend({
@@ -16,7 +16,6 @@ define("informationView", ["backbone", "main", "information"], function() {
 
         initialize: function() {
             _.bindAll(this, 'render');
-
             this.model.bind('change', this.render);
 
             this.render();

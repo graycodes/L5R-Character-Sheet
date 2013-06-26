@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false */
 var app = app || {};
 
-define("rings", ["backbone", "main"], function() {
+define("rings", ["backbone"], function() {
     "use strict";
 
     var Rings = Backbone.Model.extend({

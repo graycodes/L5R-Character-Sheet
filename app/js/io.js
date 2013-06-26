@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false, saveAs:false */
 var app = app || {};
 
-define("io", ["backbone", "main"], function() {
+define("io", ["backbone", "information", "rings", "skills"], function() {
     "use strict";
 
     var IO = Backbone.View.extend({
