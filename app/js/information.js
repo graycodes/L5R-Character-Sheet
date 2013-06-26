@@ -1,7 +1,7 @@
-/*global Backbone:false */
+/*global define:false, Backbone:false */
 var app = app || {};
 
-(function() {
+define("information", ["backbone", "main"], function() {
     "use strict";
 
     var Information = Backbone.Model.extend({
@@ -17,4 +17,4 @@ var app = app || {};
 
     app.information = new Information();
 
-}());
+});

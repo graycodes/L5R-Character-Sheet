@@ -1,7 +1,7 @@
-/*global _:false, Backbone:false, $:false */
+/*global define:false, Backbone:false, _:false, $:false */
 var app = app || {};
 
-(function() {
+define("ringsView", ["backbone", "main", "rings"], function() {
     "use strict";
 
     var RingsView = Backbone.View.extend({
@@ -65,4 +65,4 @@ var app = app || {};
 
     app.ringsView = new RingsView();
 
-}());
+});

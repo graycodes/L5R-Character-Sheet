@@ -1,7 +1,7 @@
-/*global Backbone:false, saveAs:false */
+/*global define:false, Backbone:false, saveAs:false */
 var app = app || {};
 
-(function() {
+define("io", ["backbone", "main"], function() {
     "use strict";
 
     var IO = Backbone.View.extend({
@@ -41,4 +41,4 @@ var app = app || {};
 
     app.io = new IO();
 
-}());
+});

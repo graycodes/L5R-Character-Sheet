@@ -1,7 +1,7 @@
-/*global Backbone:false, _:false */
+/*global define:false, Backbone:false, _:false */
 var app = app || {};
 
-(function() {
+define("eventBus", ["backbone", "main"], function() {
     "use strict";
 
     app.eventBus = _.extend({}, Backbone.Events);
@@ -16,4 +16,4 @@ var app = app || {};
 
     app.eventBus.trigger('test');
 
-}());
+});

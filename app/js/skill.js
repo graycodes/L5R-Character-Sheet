@@ -1,7 +1,7 @@
-/*global Backbone:false */
+/*global define:false, Backbone:false */
 var app = app || {};
 
-(function() {
+define("skill", ["backbone", "main"], function() {
     "use strict";
 
     app.Skill = Backbone.Model.extend({
@@ -19,4 +19,4 @@ var app = app || {};
         }
     });
 
-}());
+});

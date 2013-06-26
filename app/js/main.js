@@ -1,3 +1,4 @@
+/*global require:false*/
 require.config({
     paths: {
         jquery: '../bower_components/jquery/jquery',
@@ -16,18 +17,15 @@ require.config({
     }
 });
 
-require(['jquery', 'underscore', 'bootstrap', 'backbone'], function ($, _) {
-    'use strict';
-
-    console.log(arguments);
-    // use app here
-    console.log('Running jQuery %s', $().jquery);
-
+require(["jquery", "underscore", "bootstrap", "backbone", "skillsView"], function ($, _) {
+    "use strict";
 
     _.templateSettings = {
         interpolate: /\{\{(.+?)\}\}/g
     };
+
     String.prototype.capitalize = function() {
         return this.charAt(0).toUpperCase() + this.slice(1);
     };
+
 });

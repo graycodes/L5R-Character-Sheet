@@ -1,7 +1,7 @@
-/*global _:false, Backbone:false, $:false */
+/*global define:false, Backbone:false, _:false, $:false */
 var app = app || {};
 
-(function() {
+define("skillsView", ["backbone", "main", "skill", "skillView", "skills"], function() {
     "use strict";
 
     var SkillsView = Backbone.View.extend({
@@ -44,4 +44,4 @@ var app = app || {};
 
     app.skillsView = new SkillsView();
 
-}());
+});
