@@ -36,7 +36,6 @@ var app = app || {};
         },
 
         render: function () {
-            console.log(this.model.attributes)
             this.el.innerHTML = _.template(this.el.innerHTML)(this.model.attributes);
         }
 
