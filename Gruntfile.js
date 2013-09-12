@@ -122,8 +122,10 @@ module.exports = function (grunt) {
             all: {
                 options: {
                     run: true,
-                    urls: ['http://localhost:<%= connect.options.port %>/index.html']
-                }
+                    log: true
+                    //urls: ['http://localhost:<%= connect.options.port %>/index.html']
+                },
+                src: ['index.html']
             }
         },
         coffee: {
@@ -337,7 +339,7 @@ module.exports = function (grunt) {
         'clean:server',
         'concurrent:test',
         'connect:test',
-        'mocha'
+        'mocha:all'
     ]);
 
     grunt.registerTask('build', [
