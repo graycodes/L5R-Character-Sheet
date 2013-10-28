@@ -29,4 +29,5 @@ require(["jquery", "underscore", "bootstrap", "backbone"], function ($, _) {
     };
 
     require(["informationView", "ringsView", "skillsView"]);
+
 });
