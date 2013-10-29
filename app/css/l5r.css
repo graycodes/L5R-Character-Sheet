@@ -123,10 +123,6 @@ h2 {
     width: 65px;
 }
 
-#weapons .weapon input {
-    width: 142px;
-}
-
 #weapons .weapon.arrows input {
     width: 57px;
     margin: 0 1px;
@@ -135,6 +131,26 @@ h2 {
     text-align: center;
     width: 73px;
 }
+
+.weapon .type {
+    width: 150px;
+}
+
+.weapon .attack-roll {
+    width: 90px;
+}
+
+.weapon .damage-roll {
+    width: 90px;
+}
+
+.weapon .bonus {
+    width: 30px;
+}
+.weapon .notes {
+    width: 150px;
+}
+
 
 /* status */
 

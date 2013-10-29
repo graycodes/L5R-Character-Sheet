@@ -134,38 +134,50 @@
         </div>
 
         <hr>
-<!--
-        <div id="weapons">
-            <h2>Weapons</h2>
-            <div class="row-fluid">
-                <div class="weapon span4">
-                    <p class="title">Weapon 1</p>
-                    <p><label for="">Type</label><input type="text" /></p>
-                    <p><label for="">Attack Roll</label><input type="text" /></p>
-                    <p><label for="">Damage Roll</label><input type="text" /></p>
-                    <p><label for="">Bonus</label><input type="text" /></p>
-                    <p><label for="">Notes</label><input type="text" /></p>
-                </div>
-                <div class="weapon span4">
-                    <p class="title">Weapon 2</p>
-                    <p><label for="">Type</label><input type="text" /></p>
-                    <p><label for="">Attack Roll</label><input type="text" /></p>
-                    <p><label for="">Damage Roll</label><input type="text" /></p>
-                    <p><label for="">Bonus</label><input type="text" /></p>
-                    <p><label for="">Notes</label><input type="text" /></p>
-                </div>
-                <div class="weapon arrows span4">
-                    <p class="title">Arrows</p>
-                    <p><label for="">Type</label><label for="">Damage</label><label for="">Quantity</label></p>
-                    <p><input type="text" /><input type="text" /><input type="text" /></p>
-                    <p><input type="text" /><input type="text" /><input type="text" /></p>
-                    <p><input type="text" /><input type="text" /><input type="text" /></p>
-                    <p><input type="text" /><input type="text" /><input type="text" /></p>
-                    <p><input type="text" /><input type="text" /><input type="text" /></p>
-                </div>
-            </div>
-        </div>
+
+	<div id="weapons">
+          <h2>Weapons</h2>
+          <button class="btn btn-info add">Add Weapon</button>
+          <div class="title row-fluid">
+            <span class="col type span3">Type</span>
+            <span class="col attack-roll span2">Attack Roll</span>
+            <span class="col damage-roll span2">Damage Roll</span>
+            <span class="col bonus span1">Bonus</span>
+            <span class="col notes span3">Notes</span>
+            <span class="col del span1">Del</span>
+          </div>
+          <script type="text/template" id="weapon-template" style="display: none;">
+            <div class="row-fluid weapon">
+                <p class="span3"><input class="col type" type="text" value="{{type}}" data-name="type" /></p>
+                <p class="span2"><input class="col attack-roll" type="text" value="{{attackRoll}}" data-name="attackRoll" /></p>
+                <p class="span2"><input class="col damage-roll" type="text" value="{{damageRoll}}" data-name="damageRoll" /></p>
+                <p class="span1"><input class="col bonus" type="text" value="{{bonus}}" data-name="bonus" /></p>
+                <p class="span3"><input class="col notes" type="text" value="{{notes}}" data-name="notes" /></p>
+		<p class="span1"><button class="btn btn-danger del">Del</button></p>
+
+	      <!--                <div class="weapon span4">
+				  <p class="title">Weapon 2</p>
+				  <p><label for="">Type</label><input type="text" /></p>
+				  <p><label for="">Attack Roll</label><input type="text" /></p>
+				  <p><label for="">Damage Roll</label><input type="text" /></p>
+				  <p><label for="">Bonus</label><input type="text" /></p>
+				  <p><label for="">Notes</label><input type="text" /></p>
+              </div>
+              <div class="weapon arrows span4">
+                <p class="title">Arrows</p>
+                <p><label for="">Type</label><label for="">Damage</label><label for="">Quantity</label></p>
+                <p><input type="text" /><input type="text" /><input type="text" /></p>
+                <p><input type="text" /><input type="text" /><input type="text" /></p>
+                <p><input type="text" /><input type="text" /><input type="text" /></p>
+                <p><input type="text" /><input type="text" /><input type="text" /></p>
+                <p><input type="text" /><input type="text" /><input type="text" /></p>
+              </div>
+            </div>-->
+          </script>
+	</div>
+
         <hr>
+<!--
         <div id="status">
             <h2>Status</h2>
             <div class="fluid-row">
