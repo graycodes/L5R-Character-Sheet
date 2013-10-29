@@ -20,12 +20,13 @@ define("io", ["backbone", "information", "rings", "skills"], function() {
         },
 
         getSaveData: function(data) {
+	    var output = {};
             for (var model in data) {
                 if (data.hasOwnProperty(model)) {
-                    data[model] = data[model].toJSON();
+                    output[model] = data[model].toJSON();
                 }
             }
-            return [JSON.stringify(data)];
+            return [JSON.stringify(output)];
         },
 
         getFileName: function() {

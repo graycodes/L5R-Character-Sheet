@@ -20,6 +20,8 @@ define("ringsView", ["backbone", "rings", "eventBus"], function() {
             var ring       = this.getRing(e.target.id),
                 attribute  = this.getAttribute(e.target.id),
                 lowestAttr;
+	    
+	    ring = ring === 'void' ? 'avoid' : ring;// Rename void->avoid
 
             this.model.attributes[ring][attribute] = e.target.value;
 
