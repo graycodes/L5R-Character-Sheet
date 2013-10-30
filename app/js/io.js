@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false, saveAs:false */
 var app = app || {};
 
-define("io", ["backbone", "information", "rings", "skillsView", "weaponsView"], function() {
+define("io", ["backbone", "information", "rings", "skillsView", "weaponsView", "arrowsView"], function() {
     "use strict";
 
     var IO = Backbone.View.extend({
@@ -12,7 +12,8 @@ define("io", ["backbone", "information", "rings", "skillsView", "weaponsView"], 
             info: app.information,
             rings: app.rings,
             skills: app.skillsView.collection,
-            weapons: app.weaponsView.collection
+            weapons: app.weaponsView.collection,
+	    arrows: app.arrowsView.collection
         },
 
         events: {

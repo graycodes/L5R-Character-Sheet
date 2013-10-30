@@ -147,10 +147,18 @@ h2 {
 .weapon .bonus {
     width: 30px;
 }
+
 .weapon .notes {
     width: 150px;
 }
 
+/* arrows */
+
+.arrow .type,
+.arrow .damage,
+.arrow .quantity {
+    width: 90px;
+}
 
 /* status */
 
