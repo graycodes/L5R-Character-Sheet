@@ -8,7 +8,7 @@ define("arrow", ["backbone"], function() {
         defaults: {
 	    type: "",
 	    damage: "",
-	    quantity: ""
+	    quantity: 0
         }
 
     });
