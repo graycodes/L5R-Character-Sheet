@@ -180,6 +180,19 @@
 	</div>
 
         <hr>
+
+	<div id="points">
+	  <h2>Points</h2>
+	  <script type="text/template" id="point-template" style="display:none">
+
+	    <div class="row-fluid">
+	      <label for="honor">Honor</label>
+	      <input type="number" id="honor" value="{{stat['rank']}}" /> . 
+	      <input type="number" value="{{stat['points']}}" />
+	    </div>
+
+	  </script>
+	</div>
 <!--
         <div id="status">
             <h2>Status</h2>
