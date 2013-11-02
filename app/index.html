@@ -168,11 +168,11 @@
 	  </div>
 	  <script type="text/template" id="arrow-template" style="display:none">
 	    <div class="arrow row-fluid">
-                <p class="span2"><input type="text" class="col type" data-name="type" 
+                <p class="span2"><input type="text" class="col type" min="0" data-name="type" 
 					value="{{type}}" /></p>
-                <p class="span2"><input type="text" class="col damage" data-name="damage" 
+                <p class="span2"><input type="text" class="col damage" min="0" data-name="damage" 
 					value="{{damage}}" /></p>
-                <p class="span2"><input type="number" class="col quantity" data-name="quantity" 
+                <p class="span2"><input type="number" class="col quantity" min="0" data-name="quantity" 
 					value="{{quantity}}" /></p>
               </div>
             </div>
@@ -181,14 +181,14 @@
 
         <hr>
 
-	<div id="points">
+	<div id="statuses">
 	  <h2>Points</h2>
-	  <script type="text/template" id="point-template" style="display:none">
+	  <script type="text/template" id="status-template" style="display:none">
 
 	    <div class="row-fluid">
-	      <label for="honor">Honor</label>
-	      <input type="number" id="honor" value="{{stat['rank']}}" /> . 
-	      <input type="number" value="{{stat['points']}}" />
+	      <label for="{{name}}">{{name}}</label>
+	      <input type="number" id="{{name}}" value="{{rank}}" max="10" min="0" data-name="rank" /> . 
+	      <input type="number" value="{{points}}" max="9" min="0" data-name="points" />
 	    </div>
 
 	  </script>
