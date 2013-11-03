@@ -9,8 +9,8 @@ define("statusView", ["backbone", "status"], function() {
         tagName: 'div',
 
         events: {
-            'click button.del'             : 'removeStatus',
-            "change input[type='text']"    : "updateStatus"
+            'click button.del'               : 'removeStatus',
+            "change input[type='number']"    : "updateStatus"
         },
 
         template: _.template($('#status-template').html()),
