@@ -28,6 +28,6 @@ require(["jquery", "underscore", "bootstrap", "backbone"], function ($, _) {
         return this.charAt(0).toUpperCase() + this.slice(1);
     };
 
-    require(["informationView", "ringsView", "skillsView", "io", "weaponsView", "arrowsView", "statusesView", "initiativeView"]);
+    require(["informationView", "ringsView", "skillsView", "io", "weaponsView", "arrowsView", "statusesView", "initiativeView", "armorTNView"]);
 
 });
