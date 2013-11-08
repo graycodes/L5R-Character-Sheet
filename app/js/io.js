@@ -35,7 +35,8 @@ define("io", ["saveAs", "backbone", "information", "rings", "skillsView", "weapo
         },
 
         getFileName: function() {
-            return ( this.data.info.name || "Character" ).replace(/\W/g, '') + ".l5r";
+            return ( this.data.info.attributes.name || "Character" ).replace(/\W/g, '') + 
+		".l5r";
         },
 
         saveData: function() {
