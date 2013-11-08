@@ -4,7 +4,8 @@ require.config({
         jquery: '../bower_components/jquery/jquery',
         underscore: '../bower_components/underscore-amd/underscore',
         backbone: '../bower_components/backbone/backbone',
-        bootstrap: 'vendor/bootstrap'
+        bootstrap: 'vendor/bootstrap',
+	saveAs: 'vendor/saveAs'
     },
     shim: {
         bootstrap: {

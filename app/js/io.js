@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false, saveAs:false */
 var app = app || {};
 
-define("io", ["backbone", "information", "rings", "skillsView", "weaponsView", "arrowsView", "statusesView", "initiativeView", "armorTNView"], function() {
+define("io", ["saveAs", "backbone", "information", "rings", "skillsView", "weaponsView", "arrowsView", "statusesView", "initiativeView", "armorTNView"], function() {
     "use strict";
 
     var IO = Backbone.View.extend({
