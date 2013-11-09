@@ -30,6 +30,6 @@ require(["jquery", "underscore", "bootstrap", "backbone"], function ($, _) {
     };
 
     require(["informationView", "ringsView", "skillsView", "io", "weaponsView", "arrowsView", 
-	     "statusesView", "initiativeView", "armorTNView"]);
+	     "statusesView", "initiativeView", "armorTNView", "armorView"]);
 
 });

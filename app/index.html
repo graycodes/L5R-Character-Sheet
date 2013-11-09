@@ -233,12 +233,12 @@
 	      </p>
               <p>
 		<label for="armorTN-reduction">Reduction</label>
-		<input type="text" id="armorTN-reduction" value="{{reduction}}" 
+		<input type="number" id="armorTN-reduction" value="{{reduction}}" 
 		       data-name="reduction" />
 	      </p>
               <p>
 		<label for="armorTN-current">Current TN</label>
-		<input type="text" id="armorTN-current" value="{{current}}" 
+		<input type="number" id="armorTN-current" value="{{current}}" 
 		       data-name="current" />
 	      </p>
 	    </script>
@@ -248,9 +248,21 @@
 
         <div id="armor">
             <h2>Armor</h2>
-            <p><label for="">TN Bonus</label><input type="text" /></p>
-            <p><label for="">Quality</label><input type="text" /></p>
-            <p><label for="">Notes</label><input type="text" /></p>
+	    <script type="text/template" id="armor-template" style="display:none">
+              <p>
+		<label for="armor-bonus">TN Bonus</label>
+		<input type="number" id="armor-bonus" value="{{bonus}}" data-name="bonus" />
+	      </p>
+              <p>
+		<label for="armor-quality">Quality</label>
+		<input type="number" id="armor-quality" value="{{quality}}" 
+		       data-name="quality" />
+	      </p>
+              <p>
+		<label for="armor-notes">Notes</label>
+		<input type="text" id="armor-notes" value="{{notes}}" data-name="notes" />
+	      </p>
+	    </script>
         </div>
 
 	<hr />
