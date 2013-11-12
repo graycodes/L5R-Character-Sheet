@@ -220,26 +220,25 @@ h2 {
 
 /* WOUND LEVELS */
 
-#wound-levels .title {
+#woundLevels .title {
     text-align: left;
 }
 
-#wound-levels .title span {
+#woundLevels .title span {
     font-size: 11px;
 }
 
-#wound-levels label,
-#wound-levels .wound-level {
-    width: 80px;
+#woundLevels .wound-level {
+    width: 100px;
 }
 
-#wound-levels .wound-level, 
-#wound-levels .value {
+#woundLevels .wound-level, 
+#woundLevels .value {
     display: inline-block;
 }
 
-#wound-levels .value,
-#wound-levels input {
+#woundLevels .value,
+#woundLevels input {
     width: 50px;
     margin-left: 3px;
 }

@@ -275,14 +275,20 @@
 	    </p>
         </div>
 
-        <div id="wound-levels">
+        <div id="woundLevels">
             <p class="title">
 	      <span class="wound-level">Wound Level</span>
 	      <span class="value">Penalties</span>
 	      <span class="value">Total</span>
 	      <span class="value">Current</span>
 	    </p>
-	  <script type="text/template" id="wound-levels-template" style="display:none">
+	  <script type="text/template" id="woundLevel-template" style="display:none">
+	    <p>
+	      <span class="wound-level">{{name}}</span>
+	      <input type="text" value="{{penalty}}" data-name="penalty" />
+	      <input type="text" value="{{total}}" data-name="total" disabled />
+	      <input type="text" value="{{current}}" data-name="current" />
+	    </p>
 <!--            <p>
 	      <label for="">Healthy (+0)</label>
 	      <input type="text" /><input type="text" /><input type="text" />
