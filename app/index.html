@@ -294,20 +294,24 @@
 
 	<hr />
 
-        <div id="wound-rate">
+        <div id="woundHeal">
             <h2>Rate of Wound Heal</h2>
-            <p>
-	      <label for="">Stamina x2 + Insight Rank</label>
-	      <input type="text" />
-	    </p>
-            <p>
-	      <label for="">Modifiers</label>
-	      <input type="text" />
-	    </p>
-            <p>
-	      <label for="">Current Rate</label>
-	      <input type="text" />
-	    </p>
+	    <script type="text/template" id="woundHeal-template" style="display:none">
+              <p>
+		<label for="woundHeal-rate">Stamina x2 + Insight Rank</label>
+		<input type="text" value="{{rate}}" data-name="rate" id="woundHeal-rate" />
+	      </p>
+              <p>
+		<label for="woundHeal-modifiers">Modifiers</label>
+		<input type="text" value="{{modifiers}}" data-name="modifiers" 
+		       id="woundHeal-modifiers" />
+	      </p>
+              <p>
+		<label for="woundHeal-current">Current Rate</label>
+		<input type="text" value="{{current}}" data-name="current" 
+		       id="woundHeal-current" />
+	      </p>
+	    </script>
         </div>
     </div>
 </div>
