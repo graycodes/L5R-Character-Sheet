@@ -11,7 +11,7 @@ define("armorTNView", ["backbone", "armorTN"], function() {
 	model: app.armorTN,
 
         events: {
-            "change input[type='text']": "updateArmorTN"
+            "change input": "updateArmorTN"
         },
 
         template: _.template($('#armorTN-template').html()),

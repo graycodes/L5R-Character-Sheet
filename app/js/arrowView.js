@@ -9,8 +9,8 @@ define("arrowView", ["backbone", "arrow"], function() {
         tagName: 'div',
 
         events: {
-            'click button.del'             : 'removeArrow',
-            "change input[type='text']"    : "updateArrow"
+            'click button.del' : 'removeArrow',
+            "change input"     : "updateArrow"
         },
 
         template: _.template($('#arrow-template').html()),

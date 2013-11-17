@@ -56,6 +56,7 @@ define("woundLevelsView", ["backbone", "woundLevel", "woundLevelView", "woundLev
             var woundLevelView = new app.WoundLevelView({
                 model: woundLevel
             });
+            woundLevel.view = woundLevelView;
             $(this.el).append(woundLevelView.render().el);
         },
 

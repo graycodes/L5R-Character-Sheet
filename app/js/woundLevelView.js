@@ -25,6 +25,10 @@ define("woundLevelView", ["backbone", "woundLevel"], function() {
             return this;
         },
 
+        unRender: function () {
+            $(this.el).remove();
+        },
+
         updateWoundLevel: function(e) {
             this.model.set(e.target.dataset.name, e.target.value);
         },

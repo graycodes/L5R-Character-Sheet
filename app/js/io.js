@@ -72,6 +72,49 @@ define("io", ["saveAs", "backbone", "information", "rings", "skillsView", "weapo
 
             app.rings.attributes = fileData.rings;
             app.rings.trigger('change');
+
+            _(fileData.skills).each(function(skill) {
+                app.skillsView.collection.add(skill);
+            });
+
+            _(fileData.weapons).each(function(weapon) {
+                app.weaponsView.collection.add(weapon);
+            });
+
+            _(fileData.arrows).each(function(arrow) {
+                app.arrowsView.collection.add(arrow);
+            });
+            
+            _(app.statusesView.collection.models).each(function(status) {
+                console.log("removing: " + status.attributes.name);
+                status.view.unRender();
+            });
+            _(fileData.statuses).each(function(status) {
+                app.statusesView.collection.add(status);
+            });
+
+            app.initiative.attributes = fileData.initiative;
+            app.initiative.trigger('change');
+
+            app.armorTN.attributes = fileData.armorTN;
+            app.armorTN.trigger('change');
+
+            app.armor.attributes = fileData.armor;
+            app.armor.trigger('change');
+            
+            _(app.woundLevelsView.collection.models).each(function(woundLevel) {
+                console.log("removing: " + woundLevel.attributes.name);
+                console.log(woundLevel);
+                woundLevel.view.unRender();
+            });
+            _(fileData.woundLevels).each(function(woundLevel) {
+                app.woundLevelsView.collection.add(woundLevel);
+            });
+
+            app.woundHeal.attributes = fileData.woundHeal;
+            app.woundHeal.trigger('change');
+
+
         }
 
     });

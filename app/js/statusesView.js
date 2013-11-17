@@ -52,6 +52,7 @@ define("statusesView", ["backbone", "status", "statusView", "statuses"], functio
             var statusView = new app.StatusView({
                 model: status
             });
+            status.view = statusView;
             $(this.el).append(statusView.render().el);
         },
 

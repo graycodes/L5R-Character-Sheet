@@ -16,7 +16,7 @@ define("statusView", ["backbone", "status"], function() {
         template: _.template($('#status-template').html()),
 
         initialize: function() {
-            _.bindAll(this, 'render', 'removeStatus', 'unRender', 'updateStatus'); // every function that uses 'this' as the current object should be in here
+            _.bindAll(this, 'render', 'removeStatus', 'unRender', 'updateStatus');
 
             this.model.bind('change', this.render);
             this.model.bind('remove', this.unRender);

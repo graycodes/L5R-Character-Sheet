@@ -16,6 +16,13 @@ define("ringsView", ["backbone", "rings", "eventBus"], function() {
 
         template: _.template($('#rings-template').html()),
 
+        initialize: function() {
+            _.bindAll(this, 'render');
+            $('#rings-template').after(this.el);
+            this.model.bind('change', this.render);
+            this.render();
+        },
+
         setRings: function(e) {
             var ring       = this.getRing(e.target.id),
                 attribute  = this.getAttribute(e.target.id),
@@ -52,11 +59,6 @@ define("ringsView", ["backbone", "rings", "eventBus"], function() {
 
         getLowestAttribute: function(ring) {
             return +_.min(this.getAttributes(ring), function(attr) {return attr;});
-        },
-
-        initialize: function() {
-            $('#rings-template').after(this.el);
-            this.render();
         },
 
         render: function () {

@@ -38,8 +38,6 @@ define("informationView", ["backbone", "information"], function() {
         },
 
         render: function () {
-            console.log(this.el);
-            console.log(this.template(this.model.attributes));
             $(this.el).html(this.template(this.model.attributes));
             return this;
         },

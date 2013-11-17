@@ -18,7 +18,7 @@ define("skillView", ["backbone", "skill"], function() {
         template: _.template($('#skill-template').html()),
 
         initialize: function() {
-            _.bindAll(this, 'render', 'removeSkill', 'unRender', 'updateSkill'); // every function that uses 'this' as the current object should be in here
+            _.bindAll(this, 'render', 'removeSkill', 'unRender', 'updateSkill'); 
 
             this.model.bind('change', this.render);
             this.model.bind('remove', this.unRender);
