@@ -23,7 +23,8 @@ define("io", ["saveAs", "backbone", "information", "rings", "skillsView", "weapo
         },
 
         events: {
-            "click button.save": "saveData"
+            "click button.save": "saveData",
+            "change input.load": "loadData"
         },
 
         getSaveData: function(data) {
@@ -43,8 +44,34 @@ define("io", ["saveAs", "backbone", "information", "rings", "skillsView", "weapo
         },
 
         saveData: function() {
-            var blob = new Blob(this.getSaveData(this.data), {type: 'text/plain;charset=utf-8'});
+            var blob = new Blob(this.getSaveData(this.data), {
+                type: 'text/plain;charset=utf-8'
+            });
             saveAs(blob, this.getFileName());
+        },
+        
+        loadData: function(e) {
+            var reader = new FileReader();
+            var file = e.target.files[0];
+            var that = this;
+
+            reader.onload = (function(f) {
+                return function(event) {
+                    that.updateModels(JSON.parse(event.target.result));
+                };
+            }(file));
+
+            reader.readAsText(file);
+        },
+
+        updateModels: function(fileData) {
+            console.log(fileData);
+            console.log(app);
+            app.information.attributes = fileData.info;
+            app.information.trigger('change');
+
+            app.rings.attributes = fileData.rings;
+            app.rings.trigger('change');
         }
 
     });

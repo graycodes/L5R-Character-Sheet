@@ -21,37 +21,48 @@
         <hr>
         <div class="row">
             <div class="span12">
-                <button class="btn" disabled>Load</button>
                 <button class="btn btn-primary save">Save</button>
+                Load: <input type="file" class="load" name="load" />
             </div>
         </div>
+
         <hr>
+
         <div id="info">
             <h2>Information</h2>
-            <div class="row-fluid">
+            <script type="text/template" id="info-template" style="display:none">
+              <div class="row-fluid">
                 <div class="span6">
-                    <label for="name">Name</label><input id="name" type="text" placeholder="Isawa Shimura" value="{{name}}" />
+                  <label for="name">Name</label>
+                  <input id="name" type="text" placeholder="Isawa Shimura" 
+                         value="{{name}}" />
                 </div>
                 <div class="span6">
-                    <label for="rank">Rank</label><input id="rank" type="number" value="{{rank}}" disabled />
+                  <label for="rank">Rank</label>
+                  <input id="rank" type="number" value="{{rank}}" disabled />
                 </div>
-            </div>
-            <div class="row-fluid">
+              </div>
+              <div class="row-fluid">
                 <div class="span6">
-                    <label for="clan">Clan</label><input id="clan" type="text" value="{{clan}}" />
-                </div>
-                <div class="span6">
-                    <label for="exp">Exp</label><input id="exp" type="number" value="{{exp}}" />
-                </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span6">
-                    <label for="school">School</label><input id="school" type="text" value="{{school}}" />
+                  <label for="clan">Clan</label>
+                  <input id="clan" type="text" value="{{clan}}" />
                 </div>
                 <div class="span6">
-                    <label for="insight">Insight</label><input id="insight" type="number" value="{{insight}}" />
+                  <label for="exp">Exp</label>
+                  <input id="exp" type="number" value="{{exp}}" />
                 </div>
-            </div>
+              </div>
+              <div class="row-fluid">
+                <div class="span6">
+                  <label for="school">School</label>
+                  <input id="school" type="text" value="{{school}}" />
+                </div>
+                <div class="span6">
+                  <label for="insight">Insight</label>
+                  <input id="insight" type="number" value="{{insight}}" />
+                </div>
+              </div>
+            </script>
         </div>
 
         <hr>

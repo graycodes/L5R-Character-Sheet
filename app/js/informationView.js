@@ -6,7 +6,7 @@ define("informationView", ["backbone", "information"], function() {
 
     var InformationView = Backbone.View.extend({
 
-        el: $('#info'),
+        id: 'info',
 
         model: app.information,
 
@@ -14,9 +14,13 @@ define("informationView", ["backbone", "information"], function() {
             "change input" : "setInfo"
         },
 
+        template: _.template($('#info-template').html()),
+
         initialize: function() {
             _.bindAll(this, 'render');
-            // this.model.bind('change', this.render);
+            $('#info-template').after(this.el);
+
+            this.model.bind('change', this.render);
             this.render();
         },
 
@@ -34,8 +38,11 @@ define("informationView", ["backbone", "information"], function() {
         },
 
         render: function () {
-            this.el.innerHTML = _.template(this.el.innerHTML)(this.model.attributes);
-        }
+            console.log(this.el);
+            console.log(this.template(this.model.attributes));
+            $(this.el).html(this.template(this.model.attributes));
+            return this;
+        },
 
     });
 
