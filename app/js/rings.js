@@ -29,8 +29,43 @@ define("rings", ["backbone"], function() {
             avoid: {
                 rank: 1
             }
+        },
+
+        setRings: function(e) {
+            var ring       = this.getRing(e.target.id),
+                attribute  = this.getAttribute(e.target.id),
+                lowestAttr;
+	    
+	    ring = ring === 'void' ? 'avoid' : ring;// Rename void->avoid
+
+            this.attributes[ring][attribute] = e.target.value;
+
+            lowestAttr = this.getLowestAttribute(ring);
+
+            this.attributes[ring].rank = lowestAttr;
+
+            app.eventBus.trigger('setRings', this.attributes);
+
+        },
+
+        getRing: function(id) {
+            return id.substr(0, (id.indexOf('-') === -1 ? id.length : id.indexOf('-')));
+        },
+
+        getAttribute: function(id) {
+            return id.substr((id.indexOf('-') === -1 ? 0 : id.indexOf('-') + 1), id.length);
+        },
+
+        getAttributes: function(ring) {
+            return _.omit(this.attributes[ring], 'rank');
+        },
+
+        getLowestAttribute: function(ring) {
+            return +_.min(this.getAttributes(ring), function(attr) {return attr;});
         }
     });
+
+
 
     app.rings = new Rings();
 

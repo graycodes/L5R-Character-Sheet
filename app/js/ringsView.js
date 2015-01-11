@@ -24,41 +24,12 @@ define("ringsView", ["backbone", "rings", "eventBus"], function() {
         },
 
         setRings: function(e) {
-            var ring       = this.getRing(e.target.id),
-                attribute  = this.getAttribute(e.target.id),
-                lowestAttr;
-	    
-	    ring = ring === 'void' ? 'avoid' : ring;// Rename void->avoid
-
-            this.model.attributes[ring][attribute] = e.target.value;
-
-            lowestAttr = this.getLowestAttribute(ring);
-
-            this.model.attributes[ring].rank = lowestAttr;
-
-            app.eventBus.trigger('setRings', this.model.attributes);
-
+            this.model.setRings(e);
             this.render();
-        },
-
-        getRing: function(id) {
-            return id.substr(0, (id.indexOf('-') === -1 ? id.length : id.indexOf('-')));
         },
 
         getRingRanks: function() {
             return _.pluck(this.model.attributes, 'rank');
-        },
-
-        getAttribute: function(id) {
-            return id.substr((id.indexOf('-') === -1 ? 0 : id.indexOf('-') + 1), id.length);
-        },
-
-        getAttributes: function(ring) {
-            return _.omit(this.model.attributes[ring], 'rank');
-        },
-
-        getLowestAttribute: function(ring) {
-            return +_.min(this.getAttributes(ring), function(attr) {return attr;});
         },
 
         render: function () {
