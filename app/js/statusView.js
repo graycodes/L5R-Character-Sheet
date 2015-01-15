@@ -37,7 +37,7 @@ define("statusView", ["backbone", "status"], function() {
 
         updateStatus: function(e) {
             this.model.set(e.target.dataset.name, e.target.value);
-        },
+        }
 
 
     });

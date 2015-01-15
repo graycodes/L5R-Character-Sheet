@@ -6,9 +6,9 @@ define("armorTN", ["backbone"], function() {
 
     var ArmorTN = Backbone.Model.extend({
         defaults: {
-	    type: "",
-	    reduction: 0,
-	    current: 0
+            type: "",
+            reduction: 0,
+            current: 0
         }
 
     });

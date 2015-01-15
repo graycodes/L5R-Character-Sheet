@@ -37,8 +37,7 @@ define("arrowView", ["backbone", "arrow"], function() {
 
         updateArrow: function(e) {
             this.model.set(e.target.dataset.name, e.target.value);
-        },
-
+        }
 
     });
 

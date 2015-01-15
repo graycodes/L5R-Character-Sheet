@@ -6,9 +6,9 @@ define("initiative", ["backbone"], function() {
 
     var Initiative = Backbone.Model.extend({
         defaults: {
-	    roll: "",
-	    modifiers: 0,
-	    current: 0
+            roll: "",
+            modifiers: 0,
+            current: 0
         }
 
     });

@@ -6,10 +6,10 @@ define("woundLevel", ["backbone"], function() {
 
     app.WoundLevel = Backbone.Model.extend({
         defaults: {
-	    name: "",
-	    penalty: 0,
-	    total: 0,
-	    current: 0
+            name: "",
+            penalty: 0,
+            total: 0,
+            current: 0
         }
 
     });

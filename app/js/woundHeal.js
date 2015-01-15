@@ -6,9 +6,9 @@ define("woundHeal", ["backbone"], function() {
 
     var WoundHeal = Backbone.Model.extend({
         defaults: {
-	    rate: 0,
-	    modifiers: 0,
-	    current: ""
+            rate: 0,
+            modifiers: 0,
+            current: ""
         }
 
     });

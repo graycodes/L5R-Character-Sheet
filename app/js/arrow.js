@@ -6,9 +6,9 @@ define("arrow", ["backbone"], function() {
 
     app.Arrow = Backbone.Model.extend({
         defaults: {
-	    type: "",
-	    damage: "",
-	    quantity: 0
+            type: "",
+            damage: "",
+            quantity: 0
         }
 
     });

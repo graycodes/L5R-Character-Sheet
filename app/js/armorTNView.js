@@ -7,8 +7,8 @@ define("armorTNView", ["backbone", "armorTN"], function() {
     var ArmorTNView = Backbone.View.extend({
 
         id: 'armorTNs',
-	
-	model: app.armorTN,
+
+        model: app.armorTN,
 
         events: {
             "change input": "updateArmorTN"
@@ -21,7 +21,7 @@ define("armorTNView", ["backbone", "armorTN"], function() {
 
             this.model.bind('change', this.render);
             $('#armorTN-template').after(this.el);
-	    this.render();
+            this.render();
         },
 
         render: function () {
@@ -31,8 +31,7 @@ define("armorTNView", ["backbone", "armorTN"], function() {
 
         updateArmorTN: function(e) {
             this.model.set(e.target.dataset.name, e.target.value);
-        },
-
+        }
 
     });
 

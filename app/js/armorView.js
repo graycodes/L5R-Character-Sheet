@@ -7,8 +7,8 @@ define("armorView", ["backbone", "armor"], function() {
     var ArmorView = Backbone.View.extend({
 
         id: 'armors',
-	
-	model: app.armor,
+
+        model: app.armor,
 
         events: {
             "change input[type='text']": "updateArmor",
@@ -22,7 +22,7 @@ define("armorView", ["backbone", "armor"], function() {
 
             this.model.bind('change', this.render);
             $('#armor-template').after(this.el);
-	    this.render();
+            this.render();
         },
 
         render: function () {
@@ -32,7 +32,7 @@ define("armorView", ["backbone", "armor"], function() {
 
         updateArmor: function(e) {
             this.model.set(e.target.dataset.name, e.target.value);
-        },
+        }
 
 
     });

@@ -7,8 +7,8 @@ define("initiativeView", ["backbone", "initiative"], function() {
     var InitiativeView = Backbone.View.extend({
 
         id: 'initiatives',
-	
-	model: app.initiative,
+
+        model: app.initiative,
 
         events: {
             "change input[type='text']": "updateInitiative"
@@ -21,7 +21,7 @@ define("initiativeView", ["backbone", "initiative"], function() {
 
             this.model.bind('change', this.render);
             $('#initiative-template').after(this.el);
-	    this.render();
+            this.render();
         },
 
         render: function () {
@@ -31,7 +31,7 @@ define("initiativeView", ["backbone", "initiative"], function() {
 
         updateInitiative: function(e) {
             this.model.set(e.target.dataset.name, e.target.value);
-        },
+        }
 
 
     });

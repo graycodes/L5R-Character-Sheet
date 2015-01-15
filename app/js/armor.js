@@ -6,9 +6,9 @@ define("armor", ["backbone"], function() {
 
     var Armor = Backbone.Model.extend({
         defaults: {
-	    bonus: 0,
-	    quality: 0,
-	    notes: ""
+            bonus: 0,
+            quality: 0,
+            notes: ""
         }
 
     });
