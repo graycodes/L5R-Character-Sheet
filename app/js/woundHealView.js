@@ -7,8 +7,8 @@ define("woundHealView", ["backbone", "woundHeal"], function() {
     var WoundHealView = Backbone.View.extend({
 
         id: 'woundHeal',
-	
-	model: app.woundHeal,
+
+        model: app.woundHeal,
 
         events: {
             "change input[type='text']": "updateWoundHeal",
@@ -22,7 +22,7 @@ define("woundHealView", ["backbone", "woundHeal"], function() {
 
             this.model.bind('change', this.render);
             $('#woundHeal-template').after(this.el);
-	    this.render();
+            this.render();
         },
 
         render: function () {
@@ -32,8 +32,7 @@ define("woundHealView", ["backbone", "woundHeal"], function() {
 
         updateWoundHeal: function(e) {
             this.model.set(e.target.dataset.name, e.target.value);
-        },
-
+        }
 
     });
 

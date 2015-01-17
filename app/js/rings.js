@@ -1,4 +1,4 @@
-/*global define:false, Backbone:false */
+/*global define:false, Backbone:false, _:false */
 var app = app || {};
 
 define("rings", ["backbone"], function() {
@@ -35,8 +35,8 @@ define("rings", ["backbone"], function() {
             var ring       = this.getRing(e.target.id),
                 attribute  = this.getAttribute(e.target.id),
                 lowestAttr;
-	    
-	    ring = ring === 'void' ? 'avoid' : ring;// Rename void->avoid
+
+            ring = ring === 'void' ? 'avoid' : ring;// Rename void->avoid
 
             this.attributes[ring][attribute] = e.target.value;
 

@@ -20,26 +20,26 @@ define("statusesView", ["backbone", "status", "statusView", "statuses"], functio
 
             this.render();
 
-	    this.addStatus({
-		name: 'Honor',
-		rank: 2,
-		points: 0
-	    });
-	    this.addStatus({
-		name: 'Glory',
-		rank: 2,
-		points: 0
-	    });
-	    this.addStatus({
-		name: 'Status',
-		rank: 2,
-		points: 0
-	    });
-	    this.addStatus({
-		name: 'Shadowlands Taint',
-		rank: 0,
-		points: 0
-	    });
+            this.addStatus({
+                name: 'Honor',
+                rank: 2,
+                points: 0
+            });
+            this.addStatus({
+                name: 'Glory',
+                rank: 2,
+                points: 0
+            });
+            this.addStatus({
+                name: 'Status',
+                rank: 2,
+                points: 0
+            });
+            this.addStatus({
+                name: 'Shadowlands Taint',
+                rank: 0,
+                points: 0
+            });
 
         },
 

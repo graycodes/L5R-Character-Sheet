@@ -6,11 +6,11 @@ define("weapon", ["backbone"], function() {
 
     app.Weapon = Backbone.Model.extend({
         defaults: {
-	    type: "",
-	    attackRoll: "",
-	    damageRoll: "",
-	    bonus: "",
-	    notes: ""
+            type: "",
+            attackRoll: "",
+            damageRoll: "",
+            bonus: "",
+            notes: ""
         }
 
     });

@@ -1,4 +1,4 @@
-/*global define:false, Backbone:false, saveAs:false */
+/*global define:false, Backbone:false, saveAs:false, _:false */
 var app = app || {};
 
 define("io", ["saveAs", "backbone", "information", "rings", "skillsView", "weaponsView", "arrowsView", "statusesView", "initiativeView", "armorTNView", "armorView", "woundLevelsView", "woundHealView"], function() {
@@ -13,13 +13,13 @@ define("io", ["saveAs", "backbone", "information", "rings", "skillsView", "weapo
             rings: app.rings,
             skills: app.skillsView.collection,
             weapons: app.weaponsView.collection,
-	    arrows: app.arrowsView.collection,
-	    statuses: app.statusesView.collection,
-	    initiative: app.initiative,
-	    armorTN: app.armorTN,
-	    armor: app.armor,
-	    woundLevels: app.woundLevelsView.collection,
-	    woundHeal: app.woundHeal,
+            arrows: app.arrowsView.collection,
+            statuses: app.statusesView.collection,
+            initiative: app.initiative,
+            armorTN: app.armorTN,
+            armor: app.armor,
+            woundLevels: app.woundLevelsView.collection,
+            woundHeal: app.woundHeal
         },
 
         events: {
@@ -28,10 +28,10 @@ define("io", ["saveAs", "backbone", "information", "rings", "skillsView", "weapo
         },
 
         getSaveData: function(data) {
-	    var output = {};
+            var output = {};
             for (var model in data) {
                 if (data.hasOwnProperty(model)) {
-		    console.log(data[model]);
+                    console.log(data[model]);
                     output[model] = data[model].toJSON();
                 }
             }
@@ -39,8 +39,8 @@ define("io", ["saveAs", "backbone", "information", "rings", "skillsView", "weapo
         },
 
         getFileName: function() {
-            return ( this.data.info.attributes.name || "Character" ).replace(/\W/g, '') + 
-		".l5r";
+            return ( this.data.info.attributes.name || "Character" ).replace(/\W/g, '') +
+        ".l5r";
         },
 
         saveData: function() {
@@ -49,13 +49,13 @@ define("io", ["saveAs", "backbone", "information", "rings", "skillsView", "weapo
             });
             saveAs(blob, this.getFileName());
         },
-        
+
         loadData: function(e) {
             var reader = new FileReader();
             var file = e.target.files[0];
             var that = this;
 
-            reader.onload = (function(f) {
+            reader.onload = (function() {
                 return function(event) {
                     that.updateModels(JSON.parse(event.target.result));
                 };
@@ -84,7 +84,7 @@ define("io", ["saveAs", "backbone", "information", "rings", "skillsView", "weapo
             _(fileData.arrows).each(function(arrow) {
                 app.arrowsView.collection.add(arrow);
             });
-            
+
             _(app.statusesView.collection.models).each(function(status) {
                 console.log("removing: " + status.attributes.name);
                 status.view.unRender();
@@ -101,7 +101,7 @@ define("io", ["saveAs", "backbone", "information", "rings", "skillsView", "weapo
 
             app.armor.attributes = fileData.armor;
             app.armor.trigger('change');
-            
+
             _(app.woundLevelsView.collection.models).each(function(woundLevel) {
                 console.log("removing: " + woundLevel.attributes.name);
                 console.log(woundLevel);

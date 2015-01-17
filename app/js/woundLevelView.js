@@ -31,8 +31,7 @@ define("woundLevelView", ["backbone", "woundLevel"], function() {
 
         updateWoundLevel: function(e) {
             this.model.set(e.target.dataset.name, e.target.value);
-        },
-
+        }
 
     });
 

@@ -20,30 +20,30 @@ define("woundLevelsView", ["backbone", "woundLevel", "woundLevelView", "woundLev
 
             this.render();
 
-	    this.addWoundLevel({
-		name: 'Healthy +0'
-	    });
-	    this.addWoundLevel({
-		name: 'Nicked +3'
-	    });
-	    this.addWoundLevel({
-		name: 'Grazed +5'
-	    });
-	    this.addWoundLevel({
-		name: 'Hurt +10'
-	    });
-	    this.addWoundLevel({
-		name: 'Injured +15'
-	    });
-	    this.addWoundLevel({
-		name: 'Crippled +20'
-	    });
-	    this.addWoundLevel({
-		name: 'Down +40'
-	    });
-	    this.addWoundLevel({
-		name: 'Out'
-	    });
+            this.addWoundLevel({
+                name: 'Healthy +0'
+            });
+            this.addWoundLevel({
+                name: 'Nicked +3'
+            });
+            this.addWoundLevel({
+                name: 'Grazed +5'
+            });
+            this.addWoundLevel({
+                name: 'Hurt +10'
+            });
+            this.addWoundLevel({
+                name: 'Injured +15'
+            });
+            this.addWoundLevel({
+                name: 'Crippled +20'
+            });
+            this.addWoundLevel({
+                name: 'Down +40'
+            });
+            this.addWoundLevel({
+                name: 'Out'
+            });
 
         },
 

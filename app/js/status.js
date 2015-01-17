@@ -6,9 +6,9 @@ define("status", ["backbone"], function() {
 
     app.Status = Backbone.Model.extend({
         defaults: {
-	    name: "",
-	    rank: 2,
-	    points: 0
+            name: "",
+            rank: 2,
+            points: 0
         }
 
     });
