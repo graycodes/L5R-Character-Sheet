@@ -18,7 +18,7 @@ require.config({
     }
 });
 
-require(["jquery", "underscore", "bootstrap", "backbone", "information"], function ($, _, bs, Backbone, information) {
+require(["jquery", "underscore", "information"], function ($, _) {
     "use strict";
 
     _.templateSettings = {

@@ -1,4 +1,4 @@
-/*global define:false, Backbone:false */
+/*global define:false*/
 var app = app || {};
 
 define(["backbone"], function(Backbone) {

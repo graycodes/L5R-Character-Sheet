@@ -1,4 +1,4 @@
-/*global describe, it, beforeEach, expect */
+/*global describe, it, expect */
 /*global define*/
 
 define(['../../app/js/information'], function (information) {
@@ -7,7 +7,7 @@ define(['../../app/js/information'], function (information) {
     describe('The information model', function () {
 
         it('should be itself.', function () {
-            expect(information).not.to.equal(information);
+            expect(information).to.equal(information);
         });
 
     });
