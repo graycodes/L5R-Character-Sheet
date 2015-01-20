@@ -7,19 +7,11 @@
 </head>
 <body>
     <div id="mocha"></div>
+
     <script src="test/lib/mocha/mocha.js"></script>
-    <script src="test/lib/mocha/mocha.js"></script>
-    <script>mocha.setup('bdd')</script>
-    <!-- assertion framework -->
     <script src="test/lib/chai.js"></script>
-    <script>var expect = chai.expect</script>
+    <script src="app/bower_components/requirejs/require.js"
+            data-main="test/spec/spec"></script>
 
-    <!-- include source files here... -->
-    <script src="app/js/information.js"></script>
-
-    <!-- include spec files here... -->
-    <script src="test/spec/information.js"></script>
-
-    <script>console.log(app);mocha.run()</script>
 </body>
 </html>

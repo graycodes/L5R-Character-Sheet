@@ -1,21 +1,15 @@
 /*global describe, it, beforeEach, expect */
-/*global app*/
+/*global define*/
 
-(function () {
+define(['../../app/js/information'], function (information) {
     "use strict";
 
     describe('The information model', function () {
 
-        var info;
-
-        beforeEach(function() {
-            info = app.information;
-        });
-
         it('should be itself.', function () {
-            expect(info).to.equal(info);
+            expect(information).not.to.equal(information);
         });
 
     });
 
-}());
+});
