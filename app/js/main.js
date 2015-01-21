@@ -29,7 +29,17 @@ require(["jquery", "underscore", "bootstrap", "backbone"], function ($, _) {
         return this.charAt(0).toUpperCase() + this.slice(1);
     };
 
-    require(["informationView", "ringsView", "skillsView", "io", "weaponsView", "arrowsView",
-         "statusesView", "initiativeView", "armorTNView", "armorView", "woundLevelsView", "woundHealView"]);
+    require(["information/informationView",
+             "rings/ringsView",
+             "skills/skillsView",
+             "io",
+             "weapons/weaponsView",
+             "arrows/arrowsView",
+             "statuses/statusesView",
+             "initiative/initiativeView",
+             "armor/armorTNView",
+             "armor/armorView",
+             "wounds/woundLevelsView",
+             "wounds/woundHealView"]);
 
 });
