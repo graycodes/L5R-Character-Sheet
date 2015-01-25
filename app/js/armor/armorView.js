@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false, _:false, $:false */
 var app = app || {};
 
-define(["backbone", "armor/armor"], function() {
+define(["armor/armor"], function() {
     "use strict";
 
     var ArmorView = Backbone.View.extend({

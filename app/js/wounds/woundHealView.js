@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false, _:false, $:false */
 var app = app || {};
 
-define(["backbone", "wounds/woundHeal"], function() {
+define(["wounds/woundHeal"], function() {
     "use strict";
 
     var WoundHealView = Backbone.View.extend({

@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false, _:false, $:false */
 var app = app || {};
 
-define(["backbone", "statuses/status", "statuses/statusView", "statuses/statuses"], function() {
+define(["statuses/status", "statuses/statusView", "statuses/statuses"], function() {
     "use strict";
 
     var StatusesView = Backbone.View.extend({

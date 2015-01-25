@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false */
 var app = app || {};
 
-define(["backbone", "arrows/arrow"], function() {
+define(["arrows/arrow"], function() {
     "use strict";
 
     app.Arrows = Backbone.Collection.extend({

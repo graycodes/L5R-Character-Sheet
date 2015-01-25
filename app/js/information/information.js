@@ -1,7 +1,7 @@
-/*global define:false*/
+/*global define, Backbone*/
 var app = app || {};
 
-define(["backbone"], function(Backbone) {
+define([], function() {
     "use strict";
 
     var Information = Backbone.Model.extend({

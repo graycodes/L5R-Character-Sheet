@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false, _:false, $:false */
 var app = app || {};
 
-define(["backbone", "arrows/arrow", "arrows/arrowView", "arrows/arrows"], function() {
+define(["arrows/arrow", "arrows/arrowView", "arrows/arrows"], function() {
     "use strict";
 
     var ArrowsView = Backbone.View.extend({

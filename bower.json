@@ -7,7 +7,8 @@
     "modernizr": "~2.6.2",
     "jquery": "~1.9.1",
     "underscore-amd": "latest",
-    "backbone": "latest"
+    "backbone": "latest",
+    "marionette": "~2.3.1"
   },
   "devDependencies": {}
 }

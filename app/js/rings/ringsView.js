@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false, _:false, $:false */
 var app = app || {};
 
-define(["backbone", "rings/rings", "../eventBus"], function() {
+define(["rings/rings", "../eventBus"], function() {
     "use strict";
 
     var RingsView = Backbone.View.extend({

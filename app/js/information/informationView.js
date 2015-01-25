@@ -1,7 +1,7 @@
 /*global define:false, Backbone:false, _:false, $:false */
 var app = app || {};
 
-define(["backbone", "information/information"], function() {
+define(["information/information"], function() {
     "use strict";
 
     var InformationView = Backbone.View.extend({
